@@ -6,7 +6,7 @@ class BasicBug : Bug
 {
     float speed;
 
-    public virtual void Start()
+    public override void Start()
     {
         base.Start();
         speed = ((BugInfo)gameTypeInfo).speed;

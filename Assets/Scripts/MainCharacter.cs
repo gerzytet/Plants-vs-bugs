@@ -14,6 +14,7 @@ public class MainCharacter : MonoBehaviour
     private static double MAX_ITEM_COOLDOWN = 0.9;
     private double itemCooldown = 0;
     public static int INVENTORY_CAPACITY = 6;
+    public int money;
 
     public List<ItemStack> inventory =
         new List<ItemStack>(new ItemStack[]
