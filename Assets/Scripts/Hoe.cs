@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class Hoe : MonoBehaviour
 {
-    //u a hoe
     //excepts player and angle to be set
-    static float DEGREES_PER_SECOND = 300.0f;
+    static float degreesPerSecond = 300.0f;
     public GameObject player;
     public Vector2 root;
     public float angle;
@@ -23,8 +22,8 @@ public class Hoe : MonoBehaviour
     void Update()
     {
         root = player.transform.position;
-        angle += DEGREES_PER_SECOND * Time.deltaTime;
-        remainingAngle -= DEGREES_PER_SECOND * Time.deltaTime;
+        angle += degreesPerSecond * Time.deltaTime;
+        remainingAngle -= degreesPerSecond * Time.deltaTime;
         if (remainingAngle <= 0)
         {
             Destroy(gameObject);

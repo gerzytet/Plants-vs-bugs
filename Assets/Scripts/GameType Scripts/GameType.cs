@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameType : Taggable
+public abstract class GameType : Taggable
 {
 
     //GameTypeInfo is a ScriptableObject that will provide basic game stats for each GameType you create

@@ -2,25 +2,23 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class Plant : Taggable
+public abstract class Plant : GameType
 {
 
     public float initialScale;
     [SerializeField] private float maxHealth;
-    public float health;
     [SerializeField] private float growth = 0f;
-    public PlantInfo plantInfo;
     [SerializeField] private float startGrowthAmount = 0;
     [SerializeField] private float growthRate = 0;
 
     public override void Start()
     {
         base.Start();
-        maxHealth = plantInfo.initialMaxHealth;
+        maxHealth = ((PlantInfo)(gameTypeInfo)).initialMaxHealth;
         initialScale = transform.localScale.x;
-        health = plantInfo.initialHealth;
+        health = ((PlantInfo)(gameTypeInfo)).initialHealth;
         startGrowthAmount = maxHealth - health;
-        growthRate = plantInfo.growthRate;
+        growthRate = ((PlantInfo)(gameTypeInfo)).growthRate;
     }
 
     public virtual void Grow()
@@ -32,14 +30,5 @@ public abstract class Plant : Taggable
         
         float healthPercent = health / maxHealth;
         transform.localScale = Vector3.one * (Mathf.Lerp(0.2f, 1f, healthPercent * initialScale));
-    }
-
-    public virtual void FixedUpdate()
-    {
-        Grow();
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }
