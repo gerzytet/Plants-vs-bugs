@@ -2,41 +2,43 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class Plant : Tower
+public abstract class Plant : Taggable
 {
     public float initialScale;
-    private float healthDif;
-    private float damageDif;
     [SerializeField] private float maxHealth;
-    [SerializeField] private float damage;
+    public float health;
     [SerializeField] private float growth = 0f;
+    public PlantInfo plantInfo;
+    [SerializeField] private float startGrowthAmount = 0;
+    [SerializeField] private float growthRate = 0;
 
     public override void Start()
     {
         base.Start();
-        var plantInfo = (PlantInfo)gameTypeInfo;
         maxHealth = plantInfo.initialMaxHealth;
-        damage = plantInfo.initialDamage;
         initialScale = transform.localScale.x;
-        healthDif = plantInfo.growthMaxHealth - plantInfo.initialMaxHealth;
-        damageDif = plantInfo.growthMaxDamage - plantInfo.initialDamage;
+        health = plantInfo.initialHealth;
+        startGrowthAmount = maxHealth - health;
+        growthRate = plantInfo.growthRate;
     }
-    public abstract void Shoot();
+
     public virtual void Grow()
     {
-        var plantInfo = (PlantInfo)gameTypeInfo;
-        if(growth < plantInfo.maxGrowth)
+        float growthAmount = Math.Min(growthRate, maxHealth - health);
+        growthAmount = Math.Min(growthAmount, startGrowthAmount);
+        startGrowthAmount -= growthAmount;
+        health += growthAmount;
+        
+        float healthPercent = health / maxHealth;
+        transform.localScale = Vector3.one * (Mathf.Lerp(0.2f, 1f, healthPercent * initialScale));
+    }
+
+    public virtual void FixedUpdate()
+    {
+        Grow();
+        if (health <= 0)
         {
-            growth += plantInfo.growthRate;
-
-            if (growth > plantInfo.maxGrowth)
-                growth = plantInfo.maxGrowth;
-
-            float growthPercent = growth / plantInfo.maxGrowth;
-            maxHealth = plantInfo.initialMaxHealth + growthPercent * healthDif;
-            damage = plantInfo.initialDamage + growthPercent * damageDif;
-            transform.localScale = Vector3.one * (Mathf.Lerp(0.2f, 1f, growthPercent * initialScale));
-
+            Destroy(gameObject);
         }
     }
 }
