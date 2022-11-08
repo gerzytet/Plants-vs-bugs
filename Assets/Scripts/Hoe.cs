@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Hoe : MonoBehaviour
 {
+    //u a hoe
     //excepts player and angle to be set
     static float DEGREES_PER_SECOND = 300.0f;
     public GameObject player;
