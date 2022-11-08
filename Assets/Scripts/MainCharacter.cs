@@ -46,6 +46,15 @@ public class MainCharacter : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    private static Vector2 getMousePositionGridlined()
+    {
+        Vector2 MousePosition = getMousePosition();
+        MousePosition -= new Vector2(0.5f, 0.5f);
+        MousePosition = new Vector2(Mathf.Round(MousePosition.x), Mathf.Round(MousePosition.y));
+        MousePosition += new Vector2(0.5f, 0.5f);
+        return MousePosition;
+    }
+
     private void shootHoe()
     {
         Vector2 position = transform.position;
@@ -58,13 +67,7 @@ public class MainCharacter : MonoBehaviour
 
     private void plantPlant()
     {
-        GameObject newPlant = Instantiate(plant, transform.position, Quaternion.identity);
-
-        /*
-        Plant plantComponent = newPlant.GetComponent<Plant>();
-        plantComponent.health = Plant.MAX_HEALTH / 5;
-        plantComponent.activeGrowthAmount = Plant.MAX_HEALTH * (4f/5f);
-        */
+        GameObject newPlant = Instantiate(plant, getMousePositionGridlined(), Quaternion.identity);
         itemCooldown = MAX_ITEM_COOLDOWN;
     }
 

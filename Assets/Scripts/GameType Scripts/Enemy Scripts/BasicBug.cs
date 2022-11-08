@@ -49,7 +49,7 @@ class BasicBug : Taggable
     {
         if (Tags.HasTag(collision2D.gameObject, "plant"))
         {
-            collision2D.gameObject.GetComponent<GameType>().TakeDamage(2);
+            collision2D.gameObject.GetComponent<Plant>().health -= 2;
         }
     }
 }

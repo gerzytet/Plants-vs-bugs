@@ -34,7 +34,7 @@ public class InventoryDisplay : MonoBehaviour
                     _ => emptyDisplay
                 };
                 GameObject oldDisplay = inventorySlots[i];
-                GameObject newDisplayInstance = Instantiate(newDisplay, oldDisplay.transform.position, newDisplay.transform.rotation);
+                GameObject newDisplayInstance = Instantiate(newDisplay, oldDisplay.transform.position + new Vector3(0, 0, -0.05f), newDisplay.transform.rotation);
                 newDisplayInstance.transform.SetParent(transform);
                 Destroy(oldDisplay);
                 inventorySlots[i] = newDisplayInstance;
