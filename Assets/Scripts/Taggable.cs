@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Taggable : MonoBehaviour
+public class Taggable : MonoBehaviour
 {
     public List<string> initialTags;
     
