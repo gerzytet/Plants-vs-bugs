@@ -18,9 +18,16 @@ public class MainCharacter : MonoBehaviour
     public List<Item> inventory =
         new List<Item>(new Item[] { Item.HOE, Item.SEEDS, Item.EMPTY, Item.EMPTY, Item.EMPTY, Item.EMPTY });
 
+    private List<KeyCode> inventorySelectKeys = new List<KeyCode>(new KeyCode[]
+    {
+        KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6
+    });
+    
+
     public int currentlySelected = 0;
     private float mouseScroll = 0;
     public GameObject hoe;
+    public GameObject plantPlacementPreview;
 
     public GameObject plant;
     // Start is called before the first frame update
@@ -97,7 +104,7 @@ public class MainCharacter : MonoBehaviour
             if (inventory[currentlySelected] == Item.HOE)
             {
                 shootHoe();
-            } else if (inventory[currentlySelected] == Item.SEEDS)
+            } else if (inventory[currentlySelected] == Item.SEEDS && plantPlacementPreview.GetComponent<PlantPlacementPreview>().CanPlantHere())
             {
                 plantPlant();
             }
@@ -114,6 +121,14 @@ public class MainCharacter : MonoBehaviour
         {
             currentlySelected = (currentlySelected + 1) % INVENTORY_CAPACITY;
             mouseScroll = 0;
+        }
+        
+        for (int i = 0; i < INVENTORY_CAPACITY; i++)
+        {
+            if (Input.GetKeyDown(inventorySelectKeys[i]))
+            {
+                currentlySelected = i;
+            }
         }
 
         rb.velocity = newVelocity;
