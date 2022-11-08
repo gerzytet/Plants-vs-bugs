@@ -13,11 +13,6 @@ public class Hoe : MonoBehaviour
     public float remainingAngle = 60;
     public List<GameObject> alreadyHit = new List<GameObject>();
 
-    void Start()
-    {
-        Update();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -38,7 +33,7 @@ public class Hoe : MonoBehaviour
         if (Tags.HasTag(collision.gameObject, "bug") && !alreadyHit.Contains(collision.gameObject))
         {
             alreadyHit.Add(collision.gameObject);
-            collision.gameObject.GetComponent<BasicBug>().health -= 20;
+            collision.gameObject.GetComponent<GameType>().Damage(20);
         }
     }
 }

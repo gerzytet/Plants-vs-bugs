@@ -7,8 +7,12 @@ using UnityEngine;
 public class PlantInfo : GameTypeInfo
 {
     //inital stats for plants
-    public float initialMaxHealth;
-    public float initialHealth;
-
+    public int cost;
+    public float reload;
     public float growthRate;
+    public float maxGrowth;
+    [Space]
+    public float initialScalePercent;
+    public float growthMaxHealth;
+    public float growthMaxDamage;
 }

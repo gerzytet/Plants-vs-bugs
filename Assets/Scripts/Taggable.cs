@@ -5,16 +5,15 @@ public abstract class Taggable : MonoBehaviour
 {
     public List<string> initialTags;
     
-    public virtual void Start()
+    public virtual void AddTag()
     {
-        //get this game object
         foreach (string tag in initialTags)
         {
             Tags.Add(gameObject, tag);
         }
     }
     
-    public virtual void OnDestroy()
+    public virtual void RemoveTag()
     {
         Tags.RemoveAll(gameObject);
     }
