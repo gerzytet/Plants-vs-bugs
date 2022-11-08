@@ -15,8 +15,16 @@ public class MainCharacter : MonoBehaviour
     private double itemCooldown = 0;
     public static int INVENTORY_CAPACITY = 6;
 
-    public List<Item> inventory =
-        new List<Item>(new Item[] { Item.HOE, Item.SEEDS, Item.EMPTY, Item.EMPTY, Item.EMPTY, Item.EMPTY });
+    public List<ItemStack> inventory =
+        new List<ItemStack>(new ItemStack[]
+        {
+            new ItemStack(Item.HOE),
+            new ItemStack(Item.SEEDS, 5),
+            new ItemStack(Item.EMPTY),
+            new ItemStack(Item.EMPTY),
+            new ItemStack(Item.EMPTY),
+            new ItemStack(Item.EMPTY)
+        });
 
     private List<KeyCode> inventorySelectKeys = new List<KeyCode>(new KeyCode[]
     {
@@ -30,12 +38,7 @@ public class MainCharacter : MonoBehaviour
     public GameObject plantPlacementPreview;
 
     public GameObject plant;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    
+
     bool anyPressed(List<KeyCode> keys)
     {
         foreach (KeyCode key in keys)
@@ -62,6 +65,15 @@ public class MainCharacter : MonoBehaviour
         return MousePosition;
     }
 
+    private void consumeHeldItem()
+    {
+        inventory[currentlySelected].count--;
+        if (HeldItem().count <= 0)
+        {
+            inventory[currentlySelected] = new ItemStack(Item.EMPTY);
+        }
+    }
+
     private void shootHoe()
     {
         Vector2 position = transform.position;
@@ -76,6 +88,7 @@ public class MainCharacter : MonoBehaviour
     {
         GameObject newPlant = Instantiate(plant, getMousePositionGridlined(), Quaternion.identity);
         itemCooldown = MAX_ITEM_COOLDOWN;
+        consumeHeldItem();
     }
 
     // Update is called once per frame
@@ -101,10 +114,10 @@ public class MainCharacter : MonoBehaviour
 
         if (Input.GetMouseButton(0) && itemCooldown <= 0)
         {
-            if (inventory[currentlySelected] == Item.HOE)
+            if (HeldItem().item == Item.HOE)
             {
                 shootHoe();
-            } else if (inventory[currentlySelected] == Item.SEEDS && plantPlacementPreview.GetComponent<PlantPlacementPreview>().CanPlantHere())
+            } else if (HeldItem().item == Item.SEEDS && plantPlacementPreview.GetComponent<PlantPlacementPreview>().CanPlantHere())
             {
                 plantPlant();
             }
@@ -132,5 +145,10 @@ public class MainCharacter : MonoBehaviour
         }
 
         rb.velocity = newVelocity;
+    }
+
+    public ItemStack HeldItem()
+    {
+        return inventory[currentlySelected];
     }
 }

@@ -47,7 +47,7 @@ public class PlantPlacementPreview : MonoBehaviour
     void Update()
     {
         MainCharacter mc = player.GetComponent<MainCharacter>();
-        bool holdingSeeds = mc.inventory[mc.currentlySelected] == Item.SEEDS;
+        bool holdingSeeds = mc.HeldItem().item == Item.SEEDS;
         if (holdingSeeds)
         {
             transform.localScale = initialScale;
