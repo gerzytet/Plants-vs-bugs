@@ -6,6 +6,11 @@ class BasicBug : Bug
 {
     float speed;
 
+    private void Start()
+    {
+        speed = ((BugInfo)gameTypeInfo).speed;
+        AddTag();
+    }
     private GameObject findNearestPlant()
     {
         Vector2 myLocation = transform.position;
@@ -34,7 +39,7 @@ class BasicBug : Bug
         else 
         {
             Vector2 direction = plant.transform.position - transform.position;
-            rb.velocity = direction.normalized * ((BugInfo)gameTypeInfo).speed;
+            rb.velocity = direction.normalized * speed;
         }
     }
     
