@@ -138,12 +138,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTags:
   - plant
-  gameTypeInfo: {fileID: 11400000, guid: ddfc8cba61ab85148a89289c170adbe5, type: 2}
-  gameTypePrefab: {fileID: 2067439751117794368}
-  gridLength: 2
-  gridWidth: 2
-  plantTransform: {fileID: 2067439751117794373}
   initialScale: 0
   maxHealth: 0
-  damage: 0
+  health: 0
   growth: 0
+  plantInfo: {fileID: 11400000, guid: 43ad0c1f2033cd74b91c4280a16255d4, type: 2}
+  startGrowthAmount: 0
+  growthRate: 0

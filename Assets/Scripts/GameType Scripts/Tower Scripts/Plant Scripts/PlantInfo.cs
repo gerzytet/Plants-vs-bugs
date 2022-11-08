@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GameType/Tower/New Plant")]
+[CreateAssetMenu(menuName = "PlantInfo")]
 
-public class PlantInfo : GameTypeInfo
+public class PlantInfo : ScriptableObject
 {
-    //basic stats for plants
-    public int cost;
+    //inital stats for plants
     public float initialMaxHealth;
-    public float initialDamage;
-    public float reload;
+    public float initialHealth;
 
     public float growthRate;
-    public float maxGrowth;
-    public float growthMaxHealth;
-    public float growthMaxDamage;
 }
