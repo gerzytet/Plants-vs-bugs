@@ -14,12 +14,10 @@ public abstract class Plant : GameType
     [SerializeField] float maxHealth;
     [SerializeField] float damage;
     [SerializeField] private float growth = 0f;
-
-
-
-    private void Start()
+    
+    public override void Start()
     {
-        AddTag();
+        base.Start();
         initialMaxHealth = gameTypeInfo.maxHealth;
         initialDamage = gameTypeInfo.damage;
         scale = ((PlantInfo)gameTypeInfo).initialScalePercent;

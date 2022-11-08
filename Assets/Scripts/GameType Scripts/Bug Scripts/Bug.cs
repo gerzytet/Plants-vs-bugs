@@ -5,9 +5,4 @@ using UnityEngine;
 
 public abstract class Bug : GameType
 {
-    private void Start()
-    {
-        AddTag();
-    }
-
 }

@@ -6,10 +6,10 @@ class BasicBug : Bug
 {
     float speed;
 
-    private void Start()
+    public virtual void Start()
     {
+        base.Start();
         speed = ((BugInfo)gameTypeInfo).speed;
-        AddTag();
     }
     private GameObject findNearestPlant()
     {
