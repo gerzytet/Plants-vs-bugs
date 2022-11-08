@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
-  m_Name: Basic Plant
+  m_Script: {fileID: 11500000, guid: 026cc5bf0a150a246ad735cc9421b5e1, type: 3}
+  m_Name: Basic Bug
   m_EditorClassIdentifier: 
-  initialMaxHealth: 100
-  initialHealth: 20
-  growthRate: 5
+  name: Basic Bug
+  maxHealth: 50
+  damage: 2
+  speed: 4
+  attackTime: 2.5

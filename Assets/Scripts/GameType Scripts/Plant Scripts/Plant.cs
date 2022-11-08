@@ -4,31 +4,44 @@ using UnityEngine;
 
 public abstract class Plant : GameType
 {
-
-    public float initialScale;
-    [SerializeField] private float maxHealth;
+    private float initialMaxHealth;
+    private float initialDamage;
+    private float healthDif;
+    private float damageDif;
+    private float scaleDif;
+    [SerializeField] Transform plantTransform;
+    [SerializeField] float scale;
+    [SerializeField] float maxHealth;
+    [SerializeField] float damage;
     [SerializeField] private float growth = 0f;
-    [SerializeField] private float startGrowthAmount = 0;
-    [SerializeField] private float growthRate = 0;
 
-    public override void Start()
+
+
+    private void Start()
     {
-        base.Start();
-        maxHealth = ((PlantInfo)(gameTypeInfo)).initialMaxHealth;
-        initialScale = transform.localScale.x;
-        health = ((PlantInfo)(gameTypeInfo)).initialHealth;
-        startGrowthAmount = maxHealth - health;
-        growthRate = ((PlantInfo)(gameTypeInfo)).growthRate;
+        AddTag();
+        initialMaxHealth = gameTypeInfo.maxHealth;
+        initialDamage = gameTypeInfo.damage;
+        scale = ((PlantInfo)gameTypeInfo).initialScalePercent;
+        healthDif = ((PlantInfo)gameTypeInfo).growthMaxHealth - initialMaxHealth;
+        damageDif = ((PlantInfo)gameTypeInfo).growthMaxDamage - initialDamage;
+        scaleDif = 1 - ((PlantInfo)gameTypeInfo).initialScalePercent;
     }
-
+    public abstract void Shoot();
     public virtual void Grow()
     {
-        float growthAmount = Math.Min(growthRate, maxHealth - health);
-        growthAmount = Math.Min(growthAmount, startGrowthAmount);
-        startGrowthAmount -= growthAmount;
-        health += growthAmount;
-        
-        float healthPercent = health / maxHealth;
-        transform.localScale = Vector3.one * (Mathf.Lerp(0.2f, 1f, healthPercent * initialScale));
+        if (growth < ((PlantInfo)gameTypeInfo).maxGrowth)
+        {
+            growth += ((PlantInfo)gameTypeInfo).growthRate;
+
+            if (growth > ((PlantInfo)gameTypeInfo).maxGrowth)
+                growth = ((PlantInfo)gameTypeInfo).maxGrowth;
+
+            float growthPercent = growth / ((PlantInfo)gameTypeInfo).maxGrowth;
+            maxHealth = initialMaxHealth + growthPercent * healthDif;
+            damage = initialDamage + growthPercent * damageDif;
+            plantTransform.localScale = Vector3.one * (scale + scaleDif * growthPercent);
+
+        }
     }
 }

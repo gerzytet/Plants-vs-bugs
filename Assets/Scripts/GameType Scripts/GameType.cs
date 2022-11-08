@@ -12,15 +12,39 @@ public abstract class GameType : Taggable
     //starting health
     public float health;
 
-    public virtual void TakeDamage(float damage)
+    private void Awake()
+    {
+        health = gameTypeInfo.maxHealth;
+    }
+
+    public virtual float GetHealth()
+    {
+        return health;
+    }
+
+
+    public virtual void SetHeatlh(float _health)
+    {
+        health = _health;
+    }
+    public virtual void Damage(float damage)
     {
         health -= damage;
         if (health <= 0)
             Die();
     }
 
+    public virtual void Heal(float heal, float maxHealth)
+    {
+        health += heal;
+        if (health >= maxHealth)
+            health = maxHealth;
+    }
+
     public virtual void Die()
     {
+        RemoveTag();
         Destroy(this.gameObject);
+
     }
 }

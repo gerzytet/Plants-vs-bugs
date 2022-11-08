@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Basic Plant
   m_EditorClassIdentifier: 
   name: Basic Plant
-  initialMaxHealth: 100
-  initialHealth: 100
-  growthRate: 0.5
+  maxHealth: 100
+  damage: 5
+  cost: 100
+  reload: 2.5
+  growthRate: 2.5
+  maxGrowth: 1000
+  initialScalePercent: 0.25
+  growthMaxHealth: 200
+  growthMaxDamage: 10
