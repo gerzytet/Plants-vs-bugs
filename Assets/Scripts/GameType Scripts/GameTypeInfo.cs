@@ -6,5 +6,4 @@ public class GameTypeInfo : ScriptableObject
 {
     //Basic stats for any GameType
     public new string name;
-    public float health;
 }

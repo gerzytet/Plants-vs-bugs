@@ -35,7 +35,6 @@ class BasicBug : Taggable
         }
         if (plant == null)
         {
-            Debug.Log("no plant");
             rb.velocity = Vector2.zero;
         }
         else 
@@ -50,7 +49,7 @@ class BasicBug : Taggable
     {
         if (Tags.HasTag(collision2D.gameObject, "plant"))
         {
-            collision2D.gameObject.GetComponent<Plant>().gameTypeInfo.health -= 2;
+            collision2D.gameObject.GetComponent<GameType>().TakeDamage(2);
         }
     }
 }

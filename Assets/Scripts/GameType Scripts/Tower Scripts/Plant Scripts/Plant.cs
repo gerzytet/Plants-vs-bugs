@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Plant : Tower
 {
+
     public float initialScale;
     private float healthDif;
     private float damageDif;

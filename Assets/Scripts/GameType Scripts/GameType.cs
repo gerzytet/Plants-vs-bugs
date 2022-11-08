@@ -9,6 +9,15 @@ public class GameType : Taggable
     public GameTypeInfo gameTypeInfo;
     //The Gameobject that represents the created GameType
     public GameObject gameTypePrefab;
+    //starting health
+    public float health;
+
+    public virtual void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+            Die();
+    }
 
     public virtual void Die()
     {
