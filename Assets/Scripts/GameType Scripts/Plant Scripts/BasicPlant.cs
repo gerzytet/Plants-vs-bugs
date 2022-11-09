@@ -9,9 +9,11 @@ public class BasicPlant : Plant
 
     public override void Shoot()
     {
+        /*
         nextShot = nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
         Projectile projectile = Instantiate(projectilePrefab, transform.position, transform.rotation, transform);
         Destroy(projectile, 5);
+        */
     }
 
     private void FixedUpdate()
