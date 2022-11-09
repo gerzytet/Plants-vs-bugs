@@ -17,13 +17,13 @@ MonoBehaviour:
   damage: 5
   cost: 10
   reload: 2.5
-  growthRate: 2.5
+  growthRate: 2
   maxGrowth: 1000
   seed: 1
   plant: {fileID: 2067439751117794368, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}
   buyable: 1
   inventoryDisplay: {fileID: 5875821366811251466, guid: f2203c4ed08460242ae0959df7f6871a, type: 3}
   sprite: {fileID: 21300000, guid: 4875eb2fb2c23c44791855175c961ba3, type: 3}
-  initialScalePercent: 0.25
+  initialScalePercent: 0.5
   growthMaxHealth: 200
   growthMaxDamage: 10
