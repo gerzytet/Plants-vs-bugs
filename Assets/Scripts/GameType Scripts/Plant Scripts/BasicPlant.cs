@@ -9,7 +9,7 @@ public class BasicPlant : Plant
 
     public override void Shoot()
     {
-            //transform.LookAt(FindNearestBug().transform);
+            // transform.LookAt(FindNearestBug().transform);
             nextShot = nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
             GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
             projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
