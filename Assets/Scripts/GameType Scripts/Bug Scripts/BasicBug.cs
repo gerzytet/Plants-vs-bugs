@@ -28,7 +28,7 @@ class BasicBug : Bug
         return closestPlant;
     }
     
-    private void Update()
+    public override void Update()
     {
         GameObject plant = findNearestPlant();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -41,6 +41,8 @@ class BasicBug : Bug
             Vector2 direction = plant.transform.position - transform.position;
             rb.velocity = direction.normalized * speed;
         }
+
+        base.Update();
     }
     
 

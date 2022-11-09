@@ -19,7 +19,6 @@ public class BugSpawner : MonoBehaviour
         if (Random.Range(0f, 1f) < spawnChancePerTick && !clock.GetComponent<Clock>().IsDay())
         {
             List<GameObject> bugSpawns = Tags.GetAll("bug_spawn");
-            Debug.Log(bugSpawns.Count);
             GameObject spawn = bugSpawns[Random.Range(0, bugSpawns.Count)];
             SpawnBugAt(spawn.transform.position);
         }
