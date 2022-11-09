@@ -9,11 +9,30 @@ public class BasicPlant : Plant
 
     public override void Shoot()
     {
-        nextShot = nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-        print(GetDamage());
-        projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
-        Destroy(projectile, 5);
+            print("shoot");
+            //transform.LookAt(FindNearestBug().transform);
+            nextShot = nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+            projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
+            Destroy(projectile, 5);
+    }
+
+    private GameObject FindNearestBug()
+    {
+        Vector2 myLocation = transform.position;
+        GameObject closestBug = null;
+        float closestDistance = float.MaxValue;
+        foreach (GameObject bug in Tags.GetAll("bug"))
+        {
+            float dist = Vector2.Distance(myLocation, bug.transform.position);
+            if (dist < closestDistance)
+            {
+                closestDistance = dist;
+                closestBug = bug;
+            }
+        }
+        print(closestBug);
+        return closestBug;
     }
 
     private void FixedUpdate()
@@ -21,7 +40,7 @@ public class BasicPlant : Plant
         Grow();
         if (((PlantInfo)gameTypeInfo).reload == 0)
             return;
-        if (Time.time >= nextShot)
+        if (Time.time >= nextShot && FindNearestBug() != null)
         {
             Shoot();
         }
