@@ -9,6 +9,9 @@ public abstract class Plant : GameType
     private float healthDif;
     private float damageDif;
     private float scaleDif;
+    [SerializeField] float healTime = 1f;
+    [SerializeField] float healPercent = .02f;
+    float nextHealTime;
     [SerializeField] Transform plantTransform;
     [SerializeField] float scale;
     [SerializeField] float maxHealth;
@@ -17,12 +20,21 @@ public abstract class Plant : GameType
     public override void Start()
     {
         base.Start();
+        maxHealth = gameTypeInfo.maxHealth;
         initialMaxHealth = gameTypeInfo.maxHealth;
         initialDamage = gameTypeInfo.damage;
         scale = ((PlantInfo)gameTypeInfo).initialScalePercent;
         healthDif = ((PlantInfo)gameTypeInfo).growthMaxHealth - initialMaxHealth;
         damageDif = ((PlantInfo)gameTypeInfo).growthMaxDamage - initialDamage;
         scaleDif = 1 - ((PlantInfo)gameTypeInfo).initialScalePercent;
+    }
+    public virtual void FixedUpdate()
+    {
+        if(nextHealTime <= Time.time)
+        {
+            Heal(maxHealth * healPercent, maxHealth);
+            nextHealTime = Time.time + healTime;
+        }
     }
     public abstract void Shoot();
     public virtual void Grow()
@@ -41,4 +53,6 @@ public abstract class Plant : GameType
 
         }
     }
+
+    
 }

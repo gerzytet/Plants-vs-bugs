@@ -33,8 +33,9 @@ public class BasicPlant : Plant
         return closestBug;
     }
 
-    private void FixedUpdate()
+    public override void FixedUpdate()
     {
+        base.FixedUpdate();
         Grow();
         if (((PlantInfo)gameTypeInfo).reload == 0)
             return;
