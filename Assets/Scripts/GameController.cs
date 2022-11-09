@@ -14,4 +14,16 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("Scenes/Lose Screen");
         }
     }
+
+    public PlantInfo plantInfoFromSeeds(Item item)
+    {
+        foreach (PlantInfo plantInfo in plantList)
+        {
+            if (plantInfo.seed == item)
+            {
+                return plantInfo;
+            }
+        }
+        return null;
+    }
 }

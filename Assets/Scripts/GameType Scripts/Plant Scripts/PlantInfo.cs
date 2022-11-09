@@ -15,6 +15,7 @@ public class PlantInfo : GameTypeInfo
     public GameObject plant;
     public bool buyable;
     public GameObject inventoryDisplay;
+    public Sprite sprite;
     [Space]
     public float initialScalePercent;
     public float growthMaxHealth;
