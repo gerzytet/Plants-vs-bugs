@@ -54,7 +54,6 @@ public abstract class GameType : Taggable
 
     public virtual void Die()
     {
-        RemoveTag();
         Destroy(this.gameObject);
 
     }

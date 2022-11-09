@@ -5,7 +5,7 @@ public class Taggable : MonoBehaviour
 {
     public List<string> initialTags;
     
-    public virtual void AddTag()
+    public virtual void Start()
     {
         foreach (string tag in initialTags)
         {
@@ -13,7 +13,7 @@ public class Taggable : MonoBehaviour
         }
     }
     
-    public virtual void RemoveTag()
+    public virtual void OnDestroy()
     {
         Tags.RemoveAll(gameObject);
     }

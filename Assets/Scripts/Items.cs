@@ -1,5 +1,5 @@
 
 public enum Item
 {
-    HOE, SEEDS, EMPTY
+    HOE, SEEDS, EMPTY, INVALID
 }

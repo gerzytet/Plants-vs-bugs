@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTags:
   - plant
+  - life_plant
   gameTypeInfo: {fileID: 11400000, guid: b870e99ef0e488f4fb40d0d80b648bd3, type: 2}
   gameTypePrefab: {fileID: 4084283088682538874}
   health: 0
@@ -146,3 +147,4 @@ MonoBehaviour:
   maxHealth: 0
   damage: 0
   growth: 0
+  projectile: {fileID: 0}
