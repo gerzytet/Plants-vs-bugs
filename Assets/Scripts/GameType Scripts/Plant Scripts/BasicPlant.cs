@@ -9,7 +9,6 @@ public class BasicPlant : Plant
 
     public override void Shoot()
     {
-            print("shoot");
             //transform.LookAt(FindNearestBug().transform);
             nextShot = nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
             GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
@@ -31,7 +30,6 @@ public class BasicPlant : Plant
                 closestBug = bug;
             }
         }
-        print(closestBug);
         return closestBug;
     }
 

@@ -23,8 +23,8 @@ public class Projectile : MonoBehaviour
         {
             print("did it");
             collision.gameObject.GetComponent<GameType>().Damage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
 
