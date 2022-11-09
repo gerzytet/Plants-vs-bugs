@@ -16,6 +16,7 @@ public class MainCharacter : MonoBehaviour
     public static int INVENTORY_CAPACITY = 6;
     public int money;
     public GameObject gameController;
+    public GameObject spriteObject;
 
     public List<ItemStack> inventory =
         new List<ItemStack>(new ItemStack[]
@@ -156,6 +157,11 @@ public class MainCharacter : MonoBehaviour
         } else if (anyPressed(RightKeys))
         {
             newVelocity.x = SPEED;
+        }
+
+        if (newVelocity != Vector2.zero)
+        {
+            spriteObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, newVelocity));
         }
 
         if (Input.GetMouseButton(0) && itemCooldown <= 0)
