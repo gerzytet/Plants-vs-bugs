@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class BugHealthBar : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
-    public GameObject bug;
+    public GameObject gameTypePrefab;
     GameType gameType;
 
     // Update is called once per frame
     private void Start()
     {
-        gameType = bug.GetComponent<GameType>();
+        gameType = gameTypePrefab.GetComponent<GameType>();
     }
     void Update()
     {

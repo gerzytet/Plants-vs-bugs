@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float projectileSpeed = 4.5f;
-    public float damage;
+    public float projectileSpeed;
+    private float damage;
     public Rigidbody2D rb;
 
     public void SetProjectileDamage(float _damage)
