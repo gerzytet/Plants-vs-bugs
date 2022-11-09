@@ -11,10 +11,12 @@ public abstract class GameType : Taggable
     public GameObject gameTypePrefab;
     //starting health
     public float health;
+    public float damage;
 
     private void Awake()
     {
         health = gameTypeInfo.maxHealth;
+        damage = gameTypeInfo.damage;
     }
 
     public virtual float GetHealth()
@@ -22,10 +24,19 @@ public abstract class GameType : Taggable
         return health;
     }
 
+    public virtual float GetDamage()
+    {
+        return damage;
+    }
 
     public virtual void SetHeatlh(float _health)
     {
         health = _health;
+    }
+
+    public virtual void SetDamage(float _damage)
+    {
+        damage = _damage;
     }
     public virtual void Damage(float damage)
     {

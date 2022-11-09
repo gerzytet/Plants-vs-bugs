@@ -12,7 +12,6 @@ public abstract class Plant : GameType
     [SerializeField] Transform plantTransform;
     [SerializeField] float scale;
     [SerializeField] float maxHealth;
-    [SerializeField] float damage;
     [SerializeField] private float growth = 0f;
     
     public override void Start()
@@ -37,7 +36,7 @@ public abstract class Plant : GameType
 
             float growthPercent = growth / ((PlantInfo)gameTypeInfo).maxGrowth;
             maxHealth = initialMaxHealth + growthPercent * healthDif;
-            damage = initialDamage + growthPercent * damageDif;
+            SetDamage(initialDamage + growthPercent * damageDif);
             plantTransform.localScale = Vector3.one * (scale + scaleDif * growthPercent);
 
         }

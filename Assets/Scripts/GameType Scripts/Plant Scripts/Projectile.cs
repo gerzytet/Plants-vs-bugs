@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float projectileSpeed = 4.5f;
+    public float damage;
+
+    private void Start()
     {
-        
+        damage = gameObject.GetComponentInParent<GameType>().GetDamage();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.position += transform.right * Time.deltaTime * projectileSpeed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Tags.HasTag(collision.gameObject, "bug"))
+        {
+            collision.gameObject.GetComponent<GameType>().Damage(damage);
+        }
+        Destroy(gameObject);
     }
 }
