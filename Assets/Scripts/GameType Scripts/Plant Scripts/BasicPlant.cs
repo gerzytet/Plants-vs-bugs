@@ -11,7 +11,8 @@ public class BasicPlant : Plant
         // transform.LookAt(FindNearestBug().transform);
         nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-        projectile.transform.LookAt(FindNearestBug().transform);
+        projectile.transform.rotation = Quaternion.Euler(0, 0,
+            Vector2.SignedAngle(Vector2.right, FindNearestBug().transform.position - transform.position));
         projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
         Destroy(projectile, 5);
     }
