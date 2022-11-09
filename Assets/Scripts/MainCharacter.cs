@@ -75,6 +75,35 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
+    public bool CanFit(Item item)
+    {
+        for (int i = 0; i < INVENTORY_CAPACITY; i++)
+        {
+            if (inventory[i].item == item || inventory[i].item == Item.EMPTY)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void AddItem(ItemStack item)
+    {
+        for (int i = 0; i < INVENTORY_CAPACITY; i++)
+        {
+            if (inventory[i].item == item.item)
+            {
+                inventory[i].count += item.count;
+                return;
+            }
+            else if (inventory[i].item == Item.EMPTY)
+            {
+                inventory[i] = item;
+                return;
+            }
+        }
+    }
+
     private void shootHoe()
     {
         Vector2 position = transform.position;
