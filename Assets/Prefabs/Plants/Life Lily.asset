@@ -19,6 +19,10 @@ MonoBehaviour:
   reload: 0
   growthRate: 0
   maxGrowth: 0
+  seed: 4
+  plant: {fileID: 4084283088682538874, guid: 466b61f5c7f6ebd409cab37dca64bd34, type: 3}
+  buyable: 1
+  inventoryDisplay: {fileID: 8220634645090444284, guid: d14ff03242d4f2b4e89f5748f0ef8b3f, type: 3}
   initialScalePercent: 1
   growthMaxHealth: 0
   growthMaxDamage: 0

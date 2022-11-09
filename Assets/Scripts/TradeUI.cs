@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TradeUI : MonoBehaviour
@@ -14,6 +14,11 @@ public class TradeUI : MonoBehaviour
             var tradeEntry = tradeEntryList[i].GetComponent<TradeEntry>();
             tradeEntry.trade = trades[i];
             tradeEntry.trader = trader;
+        }
+
+        for (int i = trades.Count; i < tradeEntryList.Count; i++)
+        {
+            tradeEntryList[i].SetActive(false);
         }
         gameObject.SetActive(false);
     }

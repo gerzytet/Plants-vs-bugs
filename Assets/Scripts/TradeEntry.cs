@@ -12,7 +12,7 @@ public class TradeEntry : MonoBehaviour
     void Update()
     {
         TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
-        text.text = trade.item + " : " + trade.cost;
+        text.text = trade.item.Name() + " : " + trade.cost;
     }
 
     public void BuyClicked()

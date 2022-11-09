@@ -4,16 +4,16 @@ using UnityEngine;
 public class BasicPlant : Plant
 {
     [SerializeField] GameObject projectilePrefab;
-    bool canShoot = true;
     float nextShot;
 
     public override void Shoot()
     {
-            // transform.LookAt(FindNearestBug().transform);
-            nextShot = nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-            projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
-            Destroy(projectile, 5);
+        // transform.LookAt(FindNearestBug().transform);
+        nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        projectile.transform.LookAt(FindNearestBug().transform);
+        projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
+        Destroy(projectile, 5);
     }
 
     private GameObject FindNearestBug()

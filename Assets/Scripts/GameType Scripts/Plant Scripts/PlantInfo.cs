@@ -11,6 +11,10 @@ public class PlantInfo : GameTypeInfo
     public float reload;
     public float growthRate;
     public float maxGrowth;
+    public Item seed;
+    public GameObject plant;
+    public bool buyable;
+    public GameObject inventoryDisplay;
     [Space]
     public float initialScalePercent;
     public float growthMaxHealth;

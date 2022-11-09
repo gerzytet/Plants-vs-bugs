@@ -8,13 +8,13 @@ public class InventoryDisplay : MonoBehaviour
     public List<GameObject> inventorySlots;
     public List<GameObject> inventoryNumbers = new List<GameObject>();
     public GameObject hoeDisplay;
-    public GameObject seedsDisplay;
     public GameObject emptyDisplay;
     public List<Item> lastKnownInventory;
     public GameObject selectIndicator;
     public GameObject inventoryNumber;
 
     public GameObject player;
+    public GameObject gameController;
 
     void Start()
     {
@@ -35,11 +35,24 @@ public class InventoryDisplay : MonoBehaviour
         {
             if (currentInventory[i] != lastKnownInventory[i])
             {
-                GameObject newDisplay = currentInventory[i] switch {
-                    Item.HOE => hoeDisplay,
-                    Item.SEEDS => seedsDisplay,
-                    _ => emptyDisplay
-                };
+                GameObject newDisplay = emptyDisplay;
+                if (currentInventory[i].IsSeeds())
+                {
+                    foreach (PlantInfo plantInfo in gameController.GetComponent<GameController>().plantList)
+                    {
+                        if (plantInfo.seed == currentInventory[i])
+                        {
+                            newDisplay = plantInfo.inventoryDisplay;
+                        }
+                    }
+                } else if (currentInventory[i] == Item.HOE)
+                {
+                    newDisplay = hoeDisplay;
+                }
+                else
+                {
+                    newDisplay = emptyDisplay;
+                }
                 GameObject oldDisplay = inventorySlots[i];
                 GameObject newDisplayInstance = Instantiate(newDisplay, oldDisplay.transform.position + new Vector3(0, 0, -0.05f), newDisplay.transform.rotation);
                 newDisplayInstance.transform.SetParent(transform);

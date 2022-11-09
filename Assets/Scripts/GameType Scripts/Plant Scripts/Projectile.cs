@@ -21,7 +21,6 @@ public class Projectile : MonoBehaviour
     {
         if (Tags.HasTag(collision.gameObject, "bug"))
         {
-            print("did it");
             collision.gameObject.GetComponent<GameType>().Damage(damage);
             Destroy(gameObject);
         }

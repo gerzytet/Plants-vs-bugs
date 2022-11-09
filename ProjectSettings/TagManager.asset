@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - enemies
+  - plants
+  - projectiles
+  - npcs
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 233318571
+    locked: 0
+  - name: enemies
+    uniqueID: 4172971991
+    locked: 0
+  - name: plants
+    uniqueID: 3202603499
+    locked: 0
+  - name: npcs
+    uniqueID: 2906767955
+    locked: 0
+  - name: ui
+    uniqueID: 2295836887
     locked: 0

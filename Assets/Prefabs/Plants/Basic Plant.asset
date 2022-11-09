@@ -15,10 +15,14 @@ MonoBehaviour:
   name: Basic Plant
   maxHealth: 100
   damage: 5
-  cost: 100
+  cost: 10
   reload: 2.5
   growthRate: 2.5
   maxGrowth: 1000
+  seed: 1
+  plant: {fileID: 2067439751117794368, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}
+  buyable: 1
+  inventoryDisplay: {fileID: 5875821366811251466, guid: f2203c4ed08460242ae0959df7f6871a, type: 3}
   initialScalePercent: 0.25
   growthMaxHealth: 200
   growthMaxDamage: 10

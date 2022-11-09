@@ -15,6 +15,7 @@ public class MainCharacter : MonoBehaviour
     private double itemCooldown = 0;
     public static int INVENTORY_CAPACITY = 6;
     public int money;
+    public GameObject gameController;
 
     public List<ItemStack> inventory =
         new List<ItemStack>(new ItemStack[]
@@ -116,7 +117,22 @@ public class MainCharacter : MonoBehaviour
 
     private void plantPlant()
     {
-        GameObject newPlant = Instantiate(plant, getMousePositionGridlined(), Quaternion.identity);
+        GameObject plantPrefab = null;
+        foreach (PlantInfo plantInfo in gameController.GetComponent<GameController>().plantList)
+        {
+            print(HeldItem().item + " " + plantInfo.seed);
+            if (plantInfo.seed == HeldItem().item)
+            {
+                plantPrefab = plantInfo.plant;
+                break;
+            }
+        }
+        if (plantPrefab == null)
+        {
+            print("No plant prefab found for " + HeldItem().item);
+            return;
+        }
+        GameObject newPlant = Instantiate(plantPrefab, getMousePositionGridlined(), Quaternion.identity);
         itemCooldown = MAX_ITEM_COOLDOWN;
         consumeHeldItem();
     }
@@ -147,7 +163,7 @@ public class MainCharacter : MonoBehaviour
             if (HeldItem().item == Item.HOE)
             {
                 shootHoe();
-            } else if (HeldItem().item == Item.SEEDS && plantPlacementPreview.GetComponent<PlantPlacementPreview>().CanPlantHere())
+            } else if (HeldItem().item.IsSeeds() && plantPlacementPreview.GetComponent<PlantPlacementPreview>().CanPlantHere())
             {
                 plantPlant();
             }
