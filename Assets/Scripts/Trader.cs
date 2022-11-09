@@ -28,4 +28,14 @@ public class Trader : MonoBehaviour
             tradeUI.SetActive(false);
         }
     }
+
+    public void TryExecuteTrade(Trade trade)
+    {
+        MainCharacter mc = player.GetComponent<MainCharacter>();
+        if (mc.CanFit(trade.item))
+        {
+            mc.money -= trade.cost;
+            mc.AddItem(new ItemStack(trade.item));
+        }
+    }
 }
