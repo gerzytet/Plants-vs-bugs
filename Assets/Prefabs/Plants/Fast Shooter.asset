@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
-  m_Name: Basic Plant
+  m_Name: Fast Shooter
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage: 10
-  cost: 10
-  reload: 1e+9
-  growthRate: 2
+  maxHealth: 75
+  damage: 7
+  cost: 25
+  reload: 0.7
+  growthRate: 0.1
   maxGrowth: 1000
-  seed: 1
-  plant: {fileID: 2067439751117794368, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}
+  seed: 4
+  plant: {fileID: 6364606239882563397, guid: a97cd0b9fd439f34595f267bfbcb0f15, type: 3}
   buyable: 1
-  inventoryDisplay: {fileID: 5875821366811251466, guid: f2203c4ed08460242ae0959df7f6871a, type: 3}
-  sprite: {fileID: 21300000, guid: 4875eb2fb2c23c44791855175c961ba3, type: 3}
-  range: 10
+  inventoryDisplay: {fileID: 8220634645090444284, guid: 7536bd86585199a4892b9cd5344db180, type: 3}
+  sprite: {fileID: 21300000, guid: f11b70d42ccd57a4cabb0a8be4846095, type: 3}
+  range: 15
   initialScalePercent: 0.5
-  growthMaxHealth: 200
-  growthMaxDamage: 20
+  growthMaxHealth: 150
+  growthMaxDamage: 15

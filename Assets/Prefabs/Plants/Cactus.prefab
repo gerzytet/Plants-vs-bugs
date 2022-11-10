@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6364606239882563392}
-  - component: {fileID: 6364606239882563399}
+  - component: {fileID: -895253515396631764}
   - component: {fileID: 6364606239882563395}
   - component: {fileID: 5491766533103543121}
   - component: {fileID: 6824715666216986477}
@@ -29,15 +29,15 @@ Transform:
   m_GameObject: {fileID: 6364606239882563397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9108963031611408836}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &6364606239882563399
-CapsuleCollider2D:
+--- !u!58 &-895253515396631764
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -50,8 +50,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 0.625
 --- !u!50 &6364606239882563395
 Rigidbody2D:
   serializedVersion: 4
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTags:
   - plant
-  gameTypeInfo: {fileID: 11400000, guid: 93603b13357fa844cb3d19c87a966ba0, type: 2}
+  gameTypeInfo: {fileID: 11400000, guid: a22d48265bf9b2d408fa1acd90f28138, type: 2}
   gameTypePrefab: {fileID: 6364606239882563397}
   health: 0
   damage: 0

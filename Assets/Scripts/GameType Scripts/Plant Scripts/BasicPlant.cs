@@ -9,7 +9,7 @@ public class BasicPlant : Plant
     public override void Shoot()
     {
         nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation, transform);
         projectile.transform.rotation = Quaternion.Euler(0, 0,
         Vector2.SignedAngle(Vector2.right, FindNearestBugInRange(range).transform.position - transform.position));
         projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());

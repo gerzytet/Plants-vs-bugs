@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
-  m_Name: Cactus
+  m_Name: Wood Wall
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage: 10
-  cost: 10
-  reload: 2
-  growthRate: 0.25
+  maxHealth: 150
+  damage: 0
+  cost: 0
+  reload: 0
+  growthRate: 0.5
   maxGrowth: 1000
-  seed: 1
-  plant: {fileID: 2067439751117794368, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}
+  seed: 4
+  plant: {fileID: 4084283088682538874, guid: 466b61f5c7f6ebd409cab37dca64bd34, type: 3}
   buyable: 1
-  inventoryDisplay: {fileID: 5875821366811251466, guid: f2203c4ed08460242ae0959df7f6871a, type: 3}
-  sprite: {fileID: 21300000, guid: 4875eb2fb2c23c44791855175c961ba3, type: 3}
-  range: 10
+  inventoryDisplay: {fileID: 8220634645090444284, guid: d14ff03242d4f2b4e89f5748f0ef8b3f, type: 3}
+  sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  range: 0
   initialScalePercent: 0.5
-  growthMaxHealth: 200
-  growthMaxDamage: 20
+  growthMaxHealth: 350
+  growthMaxDamage: 0
