@@ -27,6 +27,7 @@ public class MainCharacter : MonoBehaviour
             new ItemStack(Item.EMPTY),
             new ItemStack(Item.EMPTY),
             new ItemStack(Item.EMPTY)
+            //yep
         });
 
     private List<KeyCode> inventorySelectKeys = new List<KeyCode>(new KeyCode[]
