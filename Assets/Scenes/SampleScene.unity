@@ -3328,6 +3328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicBug: {fileID: 11400000, guid: d2eb25d5c5959f24cb8348349414f9e9, type: 2}
+  mamaBug: {fileID: 11400000, guid: 62168d6ef3a47dd4cafc0556f1d351bc, type: 2}
   clock: {fileID: 417211601}
 --- !u!1001 &1821220910
 PrefabInstance:
