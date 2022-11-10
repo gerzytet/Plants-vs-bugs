@@ -17,6 +17,12 @@ public class MainCharacter : MonoBehaviour
     public int money;
     public GameObject gameController;
     public GameObject spriteObject;
+    public static MainCharacter instance;
+
+    public MainCharacter()
+    {
+        instance = this;
+    }
 
     public List<ItemStack> inventory =
         new List<ItemStack>(new ItemStack[]

@@ -17,7 +17,7 @@ public class Sun : MonoBehaviour
         {
             component = clock.GetComponent<Clock>();
         }
-        catch (UnassignedReferenceException e)
+        catch (UnassignedReferenceException _)
         {
             return;
         }
