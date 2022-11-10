@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Bug : GameType
 {
+    public GameObject player;
     public virtual void Update()
     {
         GameObject spriteObject = transform.GetChild(1).gameObject;
@@ -35,5 +36,11 @@ public abstract class Bug : GameType
         {
             collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
         }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        MainCharacter.instance.money += ((BugInfo)gameTypeInfo).moneyOnDeath;
     }
 }
