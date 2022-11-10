@@ -122,7 +122,6 @@ public class MainCharacter : MonoBehaviour
         GameObject plantPrefab = null;
         foreach (PlantInfo plantInfo in gameController.GetComponent<GameController>().plantList)
         {
-            print(HeldItem().item + " " + plantInfo.seed);
             if (plantInfo.seed == HeldItem().item)
             {
                 plantPrefab = plantInfo.plant;
