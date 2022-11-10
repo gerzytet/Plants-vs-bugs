@@ -10,7 +10,7 @@ public class MamaBug : Bug
         base.Start();
         speed = ((BugInfo)gameTypeInfo).speed;
     }
-    public override void Update()
+    public override void FixedUpdate()
     {
         GameObject plant = findNearestPlant();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -24,7 +24,7 @@ public class MamaBug : Bug
             rb.velocity = direction.normalized * speed;
         }
 
-        base.Update();
+        base.FixedUpdate();
     }
     
     public override void Die()

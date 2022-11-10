@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Bug : GameType
 {
     public GameObject player;
-    public virtual void Update()
+    public virtual void FixedUpdate()
     {
         GameObject spriteObject = transform.GetChild(1).gameObject;
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
