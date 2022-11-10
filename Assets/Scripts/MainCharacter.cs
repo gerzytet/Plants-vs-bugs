@@ -41,7 +41,7 @@ public class MainCharacter : MonoBehaviour
     public GameObject hoe;
     public GameObject plantPlacementPreview;
 
-    public GameObject plant;
+    public GameObject tradeUI;
 
     bool anyPressed(List<KeyCode> keys)
     {
@@ -165,7 +165,7 @@ public class MainCharacter : MonoBehaviour
             spriteObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, newVelocity));
         }
 
-        if (Input.GetMouseButton(0) && itemCooldown <= 0)
+        if (Input.GetMouseButton(0) && !tradeUI.activeInHierarchy && itemCooldown <= 0)
         {
             if (HeldItem().item == Item.HOE)
             {

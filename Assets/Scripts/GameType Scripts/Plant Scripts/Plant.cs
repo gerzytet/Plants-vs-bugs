@@ -9,6 +9,7 @@ public abstract class Plant : GameType
     private float healthDif;
     private float damageDif;
     private float scaleDif;
+    protected float range;
     [SerializeField] float healTime = 1f;
     [SerializeField] float healPercent = .02f;
     float nextHealTime;
@@ -27,9 +28,11 @@ public abstract class Plant : GameType
         healthDif = ((PlantInfo)gameTypeInfo).growthMaxHealth - initialMaxHealth;
         damageDif = ((PlantInfo)gameTypeInfo).growthMaxDamage - initialDamage;
         scaleDif = 1 - ((PlantInfo)gameTypeInfo).initialScalePercent;
+        range = ((PlantInfo)gameTypeInfo).range;
     }
     public virtual void FixedUpdate()
     {
+        Grow();
         if(nextHealTime <= Time.time)
         {
             Heal(maxHealth * healPercent, maxHealth);

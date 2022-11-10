@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class GameTypeInfo : ScriptableObject
 {
     //Basic stats for any GameType
-    public new string name;
     public float maxHealth;
     public float damage;
 }

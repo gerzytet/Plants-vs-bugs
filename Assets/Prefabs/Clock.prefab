@@ -148,7 +148,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d1bee88503a944a969b35754faef2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutesPerTick: 1.5
-  minutes: 0
-  hours: 6
+  minutesPerTick: 0.5
   day: 1

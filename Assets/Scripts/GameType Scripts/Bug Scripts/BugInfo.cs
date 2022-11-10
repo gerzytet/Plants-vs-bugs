@@ -7,6 +7,5 @@ using UnityEngine;
 public class BugInfo : GameTypeInfo
 {
     public float speed;
-    public float attackTime;
-    
+    public GameObject bug;
 }

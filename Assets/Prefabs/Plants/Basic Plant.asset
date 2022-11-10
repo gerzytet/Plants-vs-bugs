@@ -24,6 +24,7 @@ MonoBehaviour:
   buyable: 1
   inventoryDisplay: {fileID: 5875821366811251466, guid: f2203c4ed08460242ae0959df7f6871a, type: 3}
   sprite: {fileID: 21300000, guid: 4875eb2fb2c23c44791855175c961ba3, type: 3}
+  range: 10
   initialScalePercent: 0.5
   growthMaxHealth: 200
   growthMaxDamage: 20
