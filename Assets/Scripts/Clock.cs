@@ -5,8 +5,8 @@ public class Clock : MonoBehaviour
 {
     public float minutesPerTick;
 
-    [SerializeField] private float minutes;
-    [SerializeField] private int hours = 13;
+    public float minutes { private set; get; }
+    [SerializeField] public int hours { private set; get; } = 13;
     [SerializeField] private int day = 1;
 
     // Update is called once per frame
