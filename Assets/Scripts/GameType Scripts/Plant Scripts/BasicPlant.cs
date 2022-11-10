@@ -11,26 +11,9 @@ public class BasicPlant : Plant
         nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation, transform);
         projectile.transform.rotation = Quaternion.Euler(0, 0,
-        Vector2.SignedAngle(Vector2.right, FindNearestBugInRange(range).transform.position - transform.position));
+        Vector2.SignedAngle(Vector2.right, FindNearestBugInRange().transform.position - transform.position));
         projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
         Destroy(projectile, 5);
-    }
-
-    private GameObject FindNearestBugInRange(float range)
-    {
-        Vector2 myLocation = transform.position;
-        GameObject closestBug = null;
-        float closestDistance = float.MaxValue;
-        foreach (GameObject bug in Tags.GetAll("bug"))
-        {
-            float dist = Vector2.Distance(myLocation, bug.transform.position);
-            if (dist < closestDistance && dist < range)
-            {
-                closestDistance = dist;
-                closestBug = bug;
-            }
-        }
-        return closestBug;
     }
 
     public override void FixedUpdate()
@@ -39,7 +22,7 @@ public class BasicPlant : Plant
         
         if (((PlantInfo)gameTypeInfo).reload == 0)
             return;
-        if (Time.time >= nextShot && FindNearestBugInRange(range) != null)
+        if (Time.time >= nextShot && FindNearestBugInRange() != null)
         {
             Shoot();
         }
