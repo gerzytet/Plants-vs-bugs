@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MamaBug : Bug
@@ -34,6 +35,10 @@ public class MamaBug : Bug
         {
             Vector2 location = ((Vector2)transform.position) + new Vector2(Random.Range(0, 0.2f), Random.Range(0, 0.2f));
             GameObject newBug = Instantiate(basicBug, location, Quaternion.identity);
+            if (hypnotized)
+            {
+                newBug.GetComponent<Bug>().hypnotized = true;
+            }
         }
     }
 }
