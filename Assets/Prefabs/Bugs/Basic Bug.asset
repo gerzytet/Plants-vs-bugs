@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026cc5bf0a150a246ad735cc9421b5e1, type: 3}
   m_Name: Basic Bug
   m_EditorClassIdentifier: 
-  name: Basic Bug
   maxHealth: 50
   damage: 0.4
   speed: 4
-  attackTime: 2.5
+  bug: {fileID: 6839797796799151105, guid: 101b60995b064094d9b344aff1780162, type: 3}
