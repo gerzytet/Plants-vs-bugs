@@ -3,8 +3,12 @@ using UnityEngine;
 public abstract class Bug : GameType
 {
     public GameObject player;
+<<<<<<< HEAD
     public bool hypnotized = false;
     public virtual void Update()
+=======
+    public virtual void FixedUpdate()
+>>>>>>> 2666376976074c2191312dd716724b598f1ea3a6
     {
         GameObject spriteObject = transform.GetChild(1).gameObject;
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;

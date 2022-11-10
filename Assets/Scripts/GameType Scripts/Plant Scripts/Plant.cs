@@ -9,7 +9,7 @@ public abstract class Plant : GameType
     private float healthDif;
     private float damageDif;
     private float scaleDif;
-    protected float range;
+    private float range;
     [SerializeField] float healTime = 1f;
     [SerializeField] float healPercent = .02f;
     float nextHealTime;
@@ -56,6 +56,22 @@ public abstract class Plant : GameType
 
         }
     }
+    public virtual GameObject FindNearestBugInRange()
+    {
+        Vector2 myLocation = transform.position;
+        GameObject closestBug = null;
+        float closestDistance = float.MaxValue;
+        foreach (GameObject bug in Tags.GetAll("bug"))
+        {
+            float dist = Vector2.Distance(myLocation, bug.transform.position);
+            if (dist < closestDistance && dist < range)
+            {
+                closestDistance = dist;
+                closestBug = bug;
+            }
+        }
+        return closestBug;
+    }
 
-    
+
 }

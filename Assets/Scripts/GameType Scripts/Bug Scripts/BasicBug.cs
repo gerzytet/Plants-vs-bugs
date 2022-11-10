@@ -12,7 +12,7 @@ class BasicBug : Bug
         speed = ((BugInfo)gameTypeInfo).speed;
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
         GameObject plant = findNearestPlant();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -26,16 +26,7 @@ class BasicBug : Bug
             rb.velocity = direction.normalized * speed;
         }
 
-        base.Update();
+        base.FixedUpdate();
     }
     
-
-
-    public void OnCollisionStay2D(Collision2D collision2D)
-    {
-        if (Tags.HasTag(collision2D.gameObject, "plant"))
-        {
-            collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
-        }
-    }
 }
