@@ -1,17 +1,15 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-class BasicBug : Bug
+public class MamaBug : Bug
 {
-    float speed;
-
+    public GameObject basicBug;
+    public float speed;
+    
     public override void Start()
     {
         base.Start();
         speed = ((BugInfo)gameTypeInfo).speed;
     }
-
     public override void Update()
     {
         GameObject plant = findNearestPlant();
@@ -29,13 +27,13 @@ class BasicBug : Bug
         base.Update();
     }
     
-
-
-    public void OnCollisionStay2D(Collision2D collision2D)
+    public override void Die()
     {
-        if (Tags.HasTag(collision2D.gameObject, "plant"))
+        base.Die();
+        for (int i = 0; i < 2; i++)
         {
-            collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
+            Vector2 location = ((Vector2)transform.position) + new Vector2(Random.Range(0, 0.2f), Random.Range(0, 0.2f));
+            GameObject newBug = Instantiate(basicBug, location, Quaternion.identity);
         }
     }
 }

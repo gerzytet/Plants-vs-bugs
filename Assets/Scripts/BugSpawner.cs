@@ -8,6 +8,7 @@ public class BugSpawner : MonoBehaviour
     private Dictionary<int, Dictionary<int, List<BugInfo>>> spawnSchedule = new Dictionary<int, Dictionary<int, List<BugInfo>>>();
     public List<Dictionary<BugInfo, int>> waves;
     public BugInfo basicBug;
+    public BugInfo mamaBug;
 
     public GameObject clock;
 
@@ -22,7 +23,8 @@ public class BugSpawner : MonoBehaviour
         {
             new Dictionary<BugInfo, int>(),
             new Dictionary<BugInfo, int> {
-                {basicBug, 5}
+                {basicBug, 5},
+                {mamaBug, 1}
             },
             new Dictionary<BugInfo, int> {
                 {basicBug, 10}
