@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
   m_Name: Cactus
   m_EditorClassIdentifier: 
-  name: Cactus
   maxHealth: 75
   damage: 7.5
   cost: 25
@@ -22,7 +21,7 @@ MonoBehaviour:
   seed: 4
   plant: {fileID: 6364606239882563397, guid: a97cd0b9fd439f34595f267bfbcb0f15, type: 3}
   buyable: 1
-  inventoryDisplay: {fileID: 8220634645090444284, guid: d14ff03242d4f2b4e89f5748f0ef8b3f, type: 3}
+  inventoryDisplay: {fileID: 8220634645090444284, guid: 7536bd86585199a4892b9cd5344db180, type: 3}
   sprite: {fileID: 21300000, guid: f11b70d42ccd57a4cabb0a8be4846095, type: 3}
   range: 10
   initialScalePercent: 0.5

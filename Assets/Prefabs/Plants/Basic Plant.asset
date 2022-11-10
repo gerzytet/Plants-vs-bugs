@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
   m_Name: Basic Plant
   m_EditorClassIdentifier: 
-  name: Basic Plant
   maxHealth: 100
   damage: 10
   cost: 10
-  reload: 2.5
+  reload: 1e+9
   growthRate: 2
   maxGrowth: 1000
   seed: 1
