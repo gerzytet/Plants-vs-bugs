@@ -15,8 +15,8 @@ MonoBehaviour:
   maxHealth: 100
   damage: 10
   cost: 10
-  reload: 1e+9
-  growthRate: 2
+  reload: 2
+  growthRate: 0.25
   maxGrowth: 1000
   seed: 1
   plant: {fileID: 2067439751117794368, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}

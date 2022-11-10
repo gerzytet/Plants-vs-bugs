@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: 
   maxHealth: 75
-  damage: 7.5
+  damage: 7
   cost: 25
-  reload: 0.75
-  growthRate: 1.5
+  reload: 0.7
+  growthRate: 0.1
   maxGrowth: 1000
   seed: 4
   plant: {fileID: 6364606239882563397, guid: a97cd0b9fd439f34595f267bfbcb0f15, type: 3}
