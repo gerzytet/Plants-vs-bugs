@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage: 10
-  cost: 25
+  cost: 30
   reload: 2
   growthRate: 0.25
   maxGrowth: 1000

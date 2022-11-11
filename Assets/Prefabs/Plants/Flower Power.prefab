@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5851011282588518489}
   - component: {fileID: 8859147601812894773}
   - component: {fileID: 5851011282588518490}
-  - component: {fileID: 4996678868926555208}
   - component: {fileID: 6329574911949578356}
   - component: {fileID: 8710195911046104977}
+  - component: {fileID: 3140491920958859864}
   m_Layer: 7
   m_Name: Flower Power
   m_TagString: Untagged
@@ -74,31 +74,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &4996678868926555208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5851011282588518492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea21efb403196b74581820613a163d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialTags:
-  - plant
-  gameTypeInfo: {fileID: 11400000, guid: 93603b13357fa844cb3d19c87a966ba0, type: 2}
-  gameTypePrefab: {fileID: 5851011282588518492}
-  health: 0
-  damage: 0
-  healTime: 2
-  healPercent: 0.02
-  plantTransform: {fileID: 5851011282588518489}
-  scale: 0
-  maxHealth: 0
-  growth: 0
-  projectilePrefab: {fileID: 8593513568719648668, guid: e09b34b5e9aa96044bb9d51c7790a68f, type: 3}
 --- !u!212 &6329574911949578356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167,6 +142,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &3140491920958859864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5851011282588518492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49fa6ee6d1442cdbc899a33d5344ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialTags:
+  - plant
+  gameTypeInfo: {fileID: 11400000, guid: 93603b13357fa844cb3d19c87a966ba0, type: 2}
+  gameTypePrefab: {fileID: 5851011282588518492}
+  health: 0
+  damage: 0
+  healTime: 1
+  healPercent: 0.02
+  plantTransform: {fileID: 5851011282588518489}
+  scale: 0
+  maxHealth: 0
+  growth: 0
+  projectilePrefab: {fileID: 8593513568719648668, guid: e09b34b5e9aa96044bb9d51c7790a68f, type: 3}
 --- !u!1001 &8082538000531599322
 PrefabInstance:
   m_ObjectHideFlags: 0

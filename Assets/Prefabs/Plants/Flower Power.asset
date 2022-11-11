@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Flower Power
   m_EditorClassIdentifier: 
   maxHealth: 75
-  damage: 7
-  cost: 25
-  reload: 0.2
+  damage: 2.5
+  cost: 150
+  reload: 0.1
   growthRate: 0.1
   maxGrowth: 1000
-  seed: 4
+  seed: 7
   plant: {fileID: 5851011282588518492, guid: 2f7f41e142d1d8e4e84f8e3d2cbc1346, type: 3}
   buyable: 1
   inventoryDisplay: {fileID: 8220634645090444284, guid: b1538a4777562ab45a7c9554ceac027a, type: 3}
