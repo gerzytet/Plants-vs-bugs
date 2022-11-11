@@ -19,10 +19,10 @@ MonoBehaviour:
   growthRate: 0.1
   maxGrowth: 1000
   seed: 4
-  plant: {fileID: 6364606239882563397, guid: a97cd0b9fd439f34595f267bfbcb0f15, type: 3}
+  plant: {fileID: 5851011282588518492, guid: 2f7f41e142d1d8e4e84f8e3d2cbc1346, type: 3}
   buyable: 1
-  inventoryDisplay: {fileID: 8220634645090444284, guid: 7536bd86585199a4892b9cd5344db180, type: 3}
-  sprite: {fileID: 21300000, guid: f11b70d42ccd57a4cabb0a8be4846095, type: 3}
+  inventoryDisplay: {fileID: 8220634645090444284, guid: b1538a4777562ab45a7c9554ceac027a, type: 3}
+  sprite: {fileID: 21300000, guid: fb9a7f0099cec3a4797c0b9c0382ce1b, type: 3}
   range: 15
   initialScalePercent: 0.5
   growthMaxHealth: 150
