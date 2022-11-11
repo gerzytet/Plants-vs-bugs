@@ -462,6 +462,7 @@ MonoBehaviour:
   damage: 0
   player: {fileID: 0}
   hypnotized: 0
+  deathSound: {fileID: 8300000, guid: a07583cb178c9e1469c888b1a9abc08e, type: 3}
 --- !u!1 &8282394926514197802
 GameObject:
   m_ObjectHideFlags: 0

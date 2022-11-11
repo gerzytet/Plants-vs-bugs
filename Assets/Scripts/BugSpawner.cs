@@ -7,6 +7,7 @@ public class BugSpawner : MonoBehaviour
 {
     private Dictionary<int, Dictionary<int, List<BugInfo>>> spawnSchedule = new Dictionary<int, Dictionary<int, List<BugInfo>>>();
     public List<Dictionary<BugInfo, int>> waves;
+    
     public BugInfo basicBug;
     public BugInfo mamaBug;
     public BugInfo tinyBug;
@@ -76,9 +77,10 @@ public class BugSpawner : MonoBehaviour
             }
         }
     }
-    void SpawnBugAt(Vector2 location, GameObject bug)
+    void SpawnBugAt(Vector2 location, GameObject bug, int money)
     {
-        Instantiate(bug, location, Quaternion.identity);
+        GameObject newBug = Instantiate(bug, location, Quaternion.identity);
+        newBug.GetComponent<Bug>().moneyOnDeath = money;
     }
     
     void FixedUpdate()
@@ -91,7 +93,7 @@ public class BugSpawner : MonoBehaviour
             {
                 List<GameObject> spawnPoints = Tags.GetAll("bug_spawn");
                 var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-                SpawnBugAt(spawnPoint.transform.position, bug.bug);
+                SpawnBugAt(spawnPoint.transform.position, bug.bug, 5);
             }
             spawnSchedule[clockComponent.day].Remove(clockComponent.hours);
         }

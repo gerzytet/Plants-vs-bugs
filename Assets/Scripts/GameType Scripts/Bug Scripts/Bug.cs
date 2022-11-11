@@ -8,6 +8,8 @@ public abstract class Bug : GameType
     [Space]
     public AudioClip deathSound;
 
+    public int moneyOnDeath = 0;
+
     public virtual void FixedUpdate()
     {
         GameObject plant = findNearestPlant();
@@ -63,7 +65,7 @@ public abstract class Bug : GameType
     public override void Die()
     {
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
-        MainCharacter.instance.money += ((BugInfo)gameTypeInfo).moneyOnDeath;
+        MainCharacter.instance.money += moneyOnDeath;
         base.Die();
     }
     
