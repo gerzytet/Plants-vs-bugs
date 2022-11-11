@@ -124,7 +124,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6839797796799151119}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1629483849802514519
 SpriteRenderer:
@@ -187,9 +187,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6839797796799151119}
-  - component: {fileID: 6839797796799151118}
   - component: {fileID: 6839797796799151115}
   - component: {fileID: 6853775457231303260}
+  - component: {fileID: 8128832909775321933}
   m_Layer: 6
   m_Name: Mama Bug
   m_TagString: Untagged
@@ -209,28 +209,12 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8918284571613525534}
   - {fileID: 2596512784189947596}
+  - {fileID: 3577952748093085163}
   - {fileID: 4869952152356593797}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &6839797796799151118
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6839797796799151105}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2, y: 2}
-  m_Direction: 0
 --- !u!50 &6839797796799151115
 Rigidbody2D:
   serializedVersion: 4
@@ -273,7 +257,22 @@ MonoBehaviour:
   player: {fileID: 0}
   hypnotized: 0
   basicBug: {fileID: 6839797796799151105, guid: 101b60995b064094d9b344aff1780162, type: 3}
-  speed: 0
+--- !u!58 &8128832909775321933
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6839797796799151105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1001 &8999894186104282905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,10 +336,26 @@ PrefabInstance:
       propertyPath: gameTypePrefab
       value: 
       objectReference: {fileID: 6839797796799151105}
+    - target: {fileID: 5566868076577802994, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115395911008054923, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115395911008054923, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115395911008054923, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
---- !u!4 &8918284571613525534 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 513991471729715463, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+--- !u!224 &3577952748093085163 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5566868076577802994, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
   m_PrefabInstance: {fileID: 8999894186104282905}
   m_PrefabAsset: {fileID: 0}

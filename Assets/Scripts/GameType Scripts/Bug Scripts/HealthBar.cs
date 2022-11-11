@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
     public GameObject gameTypePrefab;
     GameType gameType;
+    public Transform healthBar;
+    public Image healthBarFill;
 
     // Update is called once per frame
     private void Start()
@@ -13,7 +16,8 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         float healthPercent = (float)(gameType.GetHealth() / gameType.gameTypeInfo.maxHealth);
-        transform.localScale = new Vector2(healthPercent, transform.localScale.y);
-        transform.localPosition = new Vector2((healthPercent - 1f) * 0.5f, transform.localPosition.y);
+        healthBarFill.fillAmount = healthPercent;
+        healthBar.rotation = Quaternion.identity;
+
     }
 }

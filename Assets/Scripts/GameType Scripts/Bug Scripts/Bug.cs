@@ -2,18 +2,28 @@ using UnityEngine;
 
 public abstract class Bug : GameType
 {
+    Rigidbody2D rb;
     public GameObject player;
     public bool hypnotized = false;
     public virtual void FixedUpdate()
     {
-        GameObject spriteObject = transform.GetChild(1).gameObject;
-        Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
-        spriteObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, velocity));
+        GameObject plant = findNearestPlant();
+        if (plant == null)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            Vector2 direction = plant.transform.position - transform.position;
+            rb.velocity = direction.normalized * ((BugInfo)gameTypeInfo).speed;
+        }
+        transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, rb.velocity));
     }
 
     public virtual void Start()
     {
         base.Start();
+        rb = GetComponent<Rigidbody2D>();
         if (hypnotized)
         {
             Hypnotize();

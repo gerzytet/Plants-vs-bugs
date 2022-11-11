@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4218486663906042561}
+  - {fileID: 8135892113132994868}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   health: 0
   damage: 0
   healTime: 2
-  healPercent: 0.02
+  healPercent: 0.04
   plantTransform: {fileID: 2067439751117794373}
   scale: 0
   maxHealth: 0
@@ -223,8 +223,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
---- !u!4 &4218486663906042561 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 513991471729715463, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+--- !u!224 &8135892113132994868 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5566868076577802994, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
   m_PrefabInstance: {fileID: 4443086630576720838}
   m_PrefabAsset: {fileID: 0}

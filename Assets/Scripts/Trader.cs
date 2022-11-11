@@ -15,6 +15,8 @@ public class Trader : MonoBehaviour
     public Sprite daySprite;
     public Sprite nightSprite;
     private bool inRange = false;
+    [Space]
+    public AudioSource itemBuy;
     
     public void Awake()
     {
@@ -49,6 +51,7 @@ public class Trader : MonoBehaviour
         {
             mc.money -= trade.cost;
             mc.AddItem(new ItemStack(trade.item));
+            itemBuy.Play();
         }
     }
 
