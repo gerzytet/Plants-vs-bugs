@@ -3328,7 +3328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicBug: {fileID: 11400000, guid: d2eb25d5c5959f24cb8348349414f9e9, type: 2}
-  mamaBug: {fileID: 0}
+  mamaBug: {fileID: 11400000, guid: 62168d6ef3a47dd4cafc0556f1d351bc, type: 2}
   clock: {fileID: 417211601}
 --- !u!1001 &1821220910
 PrefabInstance:
@@ -3513,6 +3513,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2322047291514337634, guid: 8be0e318425743c468f2ddeae3d5e35d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2067439751117794368, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}
       propertyPath: m_Name
       value: Basic Plant (1)
@@ -3560,10 +3564,6 @@ PrefabInstance:
     - target: {fileID: 2067439751117794373, guid: 67e75fbf02aeb1f4ba437c820163fd83, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322047291514337634, guid: 8be0e318425743c468f2ddeae3d5e35d, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2615481143758373827, guid: 8be0e318425743c468f2ddeae3d5e35d, type: 3}
