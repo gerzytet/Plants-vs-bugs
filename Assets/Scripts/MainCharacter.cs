@@ -18,6 +18,8 @@ public class MainCharacter : MonoBehaviour
     public GameObject gameController;
     public GameObject spriteObject;
     public static MainCharacter instance;
+    [Space]
+    public AudioSource swingHoe;
 
     public MainCharacter()
     {
@@ -115,6 +117,7 @@ public class MainCharacter : MonoBehaviour
 
     private void shootHoe()
     {
+        swingHoe.Play();
         Vector2 position = transform.position;
         GameObject newHoe = Instantiate(this.hoe, position, Quaternion.identity);
         Hoe hoeComponent = newHoe.GetComponent<Hoe>();
