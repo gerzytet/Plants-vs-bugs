@@ -143,7 +143,7 @@ public class MainCharacter : MonoBehaviour
             return;
         }
         GameObject newPlant = Instantiate(plantPrefab, getMousePositionGridlined(), Quaternion.identity);
-        itemCooldown = MAX_ITEM_COOLDOWN;
+        itemCooldown = 0.3;
         consumeHeldItem();
     }
 
