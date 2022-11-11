@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4996678868926555208}
   - component: {fileID: 6329574911949578356}
   m_Layer: 7
-  m_Name: Fast Shooter
+  m_Name: Flower Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   health: 0
   damage: 0
   healTime: 2
-  healPercent: 0.025
+  healPercent: 0.02
   plantTransform: {fileID: 5851011282588518489}
   scale: 0
   maxHealth: 0
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: -1092363797
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f11b70d42ccd57a4cabb0a8be4846095, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb9a7f0099cec3a4797c0b9c0382ce1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

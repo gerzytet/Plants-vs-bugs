@@ -1,7 +1,7 @@
 
 public enum Item
 {
-    HOE, SEEDS, EMPTY, INVALID, CACTUS_SEEDS, MUSHROOM_SEEDS, DANDELION_SEEDS
+    HOE, Wood_SEEDS, EMPTY, INVALID, CACTUS_SEEDS, MUSHROOM_SEEDS, DANDELION_SEEDS
 }
 
 public static class Items
@@ -12,18 +12,18 @@ public static class Items
         {
             case Item.HOE:
                 return "Hoe";
-            case Item.SEEDS:
-                return "Seeds";
+            case Item.Wood_SEEDS:
+                return "Woodwall Seed";
             case Item.EMPTY:
                 return "Empty";
             case Item.INVALID:
                 return "Invalid";
             case Item.CACTUS_SEEDS:
-                return "Cactus Seeds";
+                return "Sharpshooter Seed";
             case Item.MUSHROOM_SEEDS:
-                return "Mushroom Seeds";
+                return "Hypnoshroom Seed";
             case Item.DANDELION_SEEDS:
-                return "Spikedelion Seeds";
+                return "Spikedelion Seed";
             default:
                 return "Unknown";
         }
@@ -33,7 +33,7 @@ public static class Items
     {
         switch (item)
         {
-            case Item.SEEDS:
+            case Item.Wood_SEEDS:
             case Item.CACTUS_SEEDS:
             case Item.MUSHROOM_SEEDS:
             case Item.DANDELION_SEEDS:

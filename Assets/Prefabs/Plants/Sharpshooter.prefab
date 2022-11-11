@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6364606239882563392}
   - component: {fileID: -895253515396631764}
   - component: {fileID: 6364606239882563395}
+  - component: {fileID: 5491766533103543121}
   - component: {fileID: 6824715666216986477}
-  - component: {fileID: 7042380975110329977}
   m_Layer: 7
-  m_Name: Dandelion
+  m_Name: Sharpshooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,6 +73,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &5491766533103543121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364606239882563397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea21efb403196b74581820613a163d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialTags:
+  - plant
+  gameTypeInfo: {fileID: 11400000, guid: a22d48265bf9b2d408fa1acd90f28138, type: 2}
+  gameTypePrefab: {fileID: 6364606239882563397}
+  health: 0
+  damage: 0
+  healTime: 2
+  healPercent: 0.02
+  plantTransform: {fileID: 6364606239882563392}
+  scale: 0
+  maxHealth: 0
+  growth: 0
+  projectilePrefab: {fileID: 8593513568719648668, guid: abdaebcb91c876f42817d3221504f92c, type: 3}
 --- !u!212 &6824715666216986477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: -1092363797
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92ddc5a938b0c4a419a20c7dcbb61940, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f11b70d42ccd57a4cabb0a8be4846095, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,30 +150,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7042380975110329977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6364606239882563397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6220727768394159a864c09097ae81df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialTags: []
-  gameTypeInfo: {fileID: 11400000, guid: 291bd8dc7d39a8045b95ff5c4f6d2de9, type: 2}
-  gameTypePrefab: {fileID: 6364606239882563397}
-  health: 0
-  damage: 0
-  healTime: 2
-  healPercent: 0.02
-  plantTransform: {fileID: 6364606239882563392}
-  scale: 0
-  maxHealth: 0
-  growth: 0
-  projectilePrefab: {fileID: 8593513568719648668, guid: abdaebcb91c876f42817d3221504f92c, type: 3}
 --- !u!1001 &8740247832773699779
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class MainCharacter : MonoBehaviour
         new List<ItemStack>(new ItemStack[]
         {
             new ItemStack(Item.HOE),
-            new ItemStack(Item.SEEDS, 5),
+            new ItemStack(Item.Wood_SEEDS, 5),
             new ItemStack(Item.EMPTY),
             new ItemStack(Item.EMPTY),
             new ItemStack(Item.EMPTY),

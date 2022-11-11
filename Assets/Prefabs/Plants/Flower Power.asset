@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
-  m_Name: Fast Shooter
+  m_Name: Flower Power
   m_EditorClassIdentifier: 
   maxHealth: 75
   damage: 7
   cost: 25
-  reload: 0.7
+  reload: 0.2
   growthRate: 0.1
   maxGrowth: 1000
   seed: 4

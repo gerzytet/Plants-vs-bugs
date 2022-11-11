@@ -143,8 +143,8 @@ MonoBehaviour:
   gameTypePrefab: {fileID: 2067439751117794368}
   health: 0
   damage: 0
-  healTime: 1
-  healPercent: 0.025
+  healTime: 2
+  healPercent: 0.02
   plantTransform: {fileID: 2067439751117794373}
   scale: 0
   maxHealth: 0

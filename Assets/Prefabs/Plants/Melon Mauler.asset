@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
-  m_Name: Slow Shooter
+  m_Name: Melon Mauler
   m_EditorClassIdentifier: 
   maxHealth: 200
   damage: 0
