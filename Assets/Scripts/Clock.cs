@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,27 +12,33 @@ public class Clock : MonoBehaviour
     [SerializeField] public int hours { private set; get; } = 13;
     [SerializeField] public int day {private set; get; } = 1;
     public GameObject skipButton;
+    public bool frozen = false;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        minutes += minutesPerTick;
-        if (minutes >= 60)
+        if (!frozen)
         {
-            minutes = 0;
-            if (hours == 5)
+            minutes += minutesPerTick;
+            if (minutes >= 60)
             {
-                day++;
+                minutes = 0;
+                if (hours == 5)
+                {
+                    day++;
+                }
+
+                hours++;
             }
-            hours++;
-        }
-        if (hours >= 24)
-        {
-            hours = 0;
+
+            if (hours >= 24)
+            {
+                hours = 0;
+            }
         }
 
         GetComponent<TextMeshProUGUI>().text = GetDisplayString();
-        skipButton.GetComponent<Button>().interactable = IsDay();
+        skipButton.GetComponent<Button>().interactable = IsDay() && !frozen;
     }
 
     public bool IsDay()
@@ -41,7 +48,28 @@ public class Clock : MonoBehaviour
 
     public void SkipToNight()
     {
-        hours = 21;
+        float skippedMinutes = 0;
+        hours++;
+        minutes = 0;
+        skippedMinutes += 60 - minutes;
+        while (hours < 21)
+        {
+            hours++;
+            skippedMinutes += 60;
+        }
+        int skippedTicks = Mathf.FloorToInt(skippedMinutes / minutesPerTick);
+        List<Plant> plants = new List<Plant>();
+        foreach (GameObject p in Tags.GetAll("plant"))
+        {
+            plants.Add(p.GetComponent<Plant>());
+        }
+        for (int i = 0; i < skippedTicks; i++)
+        {
+            foreach (Plant p in plants)
+            {
+                p.Grow();
+            }
+        }
     }
 
     string GetDisplayString()

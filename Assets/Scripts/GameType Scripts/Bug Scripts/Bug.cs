@@ -53,7 +53,7 @@ public abstract class Bug : GameType
         return closestPlant;
     }
     
-    public void OnCollisionStay2D(Collision2D collision2D)
+    public virtual void OnTriggerStay2D(Collider2D collision2D)
     {
         string tag = hypnotized ? "bug" : "plant";
         if (Tags.HasTag(collision2D.gameObject, tag))

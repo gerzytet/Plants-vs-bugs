@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6364606239882563395}
   - component: {fileID: 6824715666216986477}
   - component: {fileID: 7042380975110329977}
+  - component: {fileID: 5272240884254254639}
   m_Layer: 7
   m_Name: Dandelion
   m_TagString: Untagged
@@ -51,7 +52,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.625
+  m_Radius: 0.5
 --- !u!50 &6364606239882563395
 Rigidbody2D:
   serializedVersion: 4
@@ -114,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: -1092363797
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92ddc5a938b0c4a419a20c7dcbb61940, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0931ae5e4d93908498ca17956df12cd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,6 +150,22 @@ MonoBehaviour:
   maxHealth: 0
   growth: 0
   projectilePrefab: {fileID: 8593513568719648668, guid: abdaebcb91c876f42817d3221504f92c, type: 3}
+--- !u!58 &5272240884254254639
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364606239882563397}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1001 &8740247832773699779
 PrefabInstance:
   m_ObjectHideFlags: 0

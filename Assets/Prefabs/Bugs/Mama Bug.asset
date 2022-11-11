@@ -16,4 +16,4 @@ MonoBehaviour:
   damage: 0.8
   speed: 1
   bug: {fileID: 6839797796799151105, guid: 0be454fbb43265a4b87c3817101d6e40, type: 3}
-  moneyOnDeath: 15
+  moneyOnDeath: 0

@@ -22,7 +22,7 @@ MonoBehaviour:
   plant: {fileID: 6364606239882563397, guid: 23b616feadb926a4e8e556fad3a5063c, type: 3}
   buyable: 1
   inventoryDisplay: {fileID: 8220634645090444284, guid: c51a789ffada49c4690f18f006769d0d, type: 3}
-  sprite: {fileID: 21300000, guid: 92ddc5a938b0c4a419a20c7dcbb61940, type: 3}
+  sprite: {fileID: 21300000, guid: 0931ae5e4d93908498ca17956df12cd0, type: 3}
   range: Infinity
   initialScalePercent: 0.25
   growthMaxHealth: 200

@@ -9,4 +9,21 @@ public class StartButton : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/SampleScene");
     }
+    public void StartGameEasy()
+    {
+        StartGame();
+        GameController.difficulty = Difficulty.EASY;
+    }
+
+    public void StartGameNormal()
+    {
+        StartGame();
+        GameController.difficulty = Difficulty.NORMAL;
+    }
+    
+    public void StartGameHard()
+    {
+        StartGame();
+        GameController.difficulty = Difficulty.HARD;
+    }
 }

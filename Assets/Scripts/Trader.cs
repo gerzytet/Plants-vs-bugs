@@ -24,7 +24,7 @@ public class Trader : MonoBehaviour
         {
             if (plant.buyable)
             {
-                trades.Add(new Trade(plant.seed, plant.cost));
+                trades.Add(new Trade(plant.seed, (int) (plant.cost * GameController.difficulty.CostMultiplier())));
             }
         }
     }
@@ -47,7 +47,7 @@ public class Trader : MonoBehaviour
     public void TryExecuteTrade(Trade trade)
     {
         MainCharacter mc = player.GetComponent<MainCharacter>();
-        if (mc.CanFit(trade.item))
+        if (mc.CanFit(trade.item) && mc.money >= trade.cost)
         {
             mc.money -= trade.cost;
             mc.AddItem(new ItemStack(trade.item));

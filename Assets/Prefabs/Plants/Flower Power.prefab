@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5851011282588518490}
   - component: {fileID: 4996678868926555208}
   - component: {fileID: 6329574911949578356}
+  - component: {fileID: 8710195911046104977}
   m_Layer: 7
   m_Name: Flower Power
   m_TagString: Untagged
@@ -51,7 +52,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.625
+  m_Radius: 0.5
 --- !u!50 &5851011282588518490
 Rigidbody2D:
   serializedVersion: 4
@@ -150,6 +151,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8710195911046104977
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5851011282588518492}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1001 &8082538000531599322
 PrefabInstance:
   m_ObjectHideFlags: 0

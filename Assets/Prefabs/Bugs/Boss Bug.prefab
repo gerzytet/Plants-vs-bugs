@@ -455,7 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff4f29328434e9ab4452e84988e2c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTags: []
+  initialTags:
+  - bug
   gameTypeInfo: {fileID: 11400000, guid: 64b51f009d8edeb4188004acd574ec76, type: 2}
   gameTypePrefab: {fileID: 6839797796799151105}
   health: 0
@@ -463,6 +464,9 @@ MonoBehaviour:
   player: {fileID: 0}
   hypnotized: 0
   deathSound: {fileID: 8300000, guid: a07583cb178c9e1469c888b1a9abc08e, type: 3}
+  moneyOnDeath: 0
+  mamaBugsLeft: 5
+  mamaBug: {fileID: 6839797796799151105, guid: 0be454fbb43265a4b87c3817101d6e40, type: 3}
 --- !u!1 &8282394926514197802
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2067439751117794374}
   - component: {fileID: 1897379274711794792}
   - component: {fileID: 5687322233479189334}
+  - component: {fileID: 8958710512786358744}
   m_Layer: 7
   m_Name: Hypnoshroom
   m_TagString: Untagged
@@ -51,7 +52,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.625
+  m_Radius: 0.5
 --- !u!50 &2067439751117794374
 Rigidbody2D:
   serializedVersion: 4
@@ -149,6 +150,22 @@ MonoBehaviour:
   scale: 0
   maxHealth: 0
   growth: 0
+--- !u!58 &8958710512786358744
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067439751117794368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1001 &4443086630576720838
 PrefabInstance:
   m_ObjectHideFlags: 0
