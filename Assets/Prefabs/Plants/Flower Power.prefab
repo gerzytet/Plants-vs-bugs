@@ -98,7 +98,7 @@ MonoBehaviour:
   scale: 0
   maxHealth: 0
   growth: 0
-  projectilePrefab: {fileID: 8593513568719648668, guid: abdaebcb91c876f42817d3221504f92c, type: 3}
+  projectilePrefab: {fileID: 8593513568719648668, guid: e09b34b5e9aa96044bb9d51c7790a68f, type: 3}
 --- !u!212 &6329574911949578356
 SpriteRenderer:
   m_ObjectHideFlags: 0

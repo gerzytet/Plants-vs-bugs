@@ -26,7 +26,7 @@ public abstract class Bug : GameType
         transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, rb.velocity));
     }
 
-    public virtual void Start()
+    public override void Start()
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
