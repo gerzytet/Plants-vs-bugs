@@ -10,7 +10,7 @@ public class Clock : MonoBehaviour
 
     public float minutes { private set; get; }
     [SerializeField] public int hours { private set; get; } = 13;
-    [SerializeField] public int day {private set; get; } = 1;
+    [SerializeField] public int day = 1;
     public GameObject skipButton;
     public bool frozen = false;
 

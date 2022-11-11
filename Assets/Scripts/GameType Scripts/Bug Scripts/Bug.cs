@@ -7,7 +7,6 @@ public abstract class Bug : GameType
     public bool hypnotized = false;
     [Space]
     public AudioClip deathSound;
-
     public int moneyOnDeath = 0;
 
 
@@ -60,6 +59,11 @@ public abstract class Bug : GameType
         if (Tags.HasTag(collision2D.gameObject, tag))
         {
             collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
+        }
+
+        if (!GetComponent<AudioSource>().isPlaying)
+        {
+            GetComponent<AudioSource>().Play();
         }
     }
 
