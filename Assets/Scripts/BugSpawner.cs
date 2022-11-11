@@ -66,7 +66,11 @@ public class BugSpawner : MonoBehaviour
             foreach (var bug in wave)
             {
                 var bugInfo = bug.Key;
-                var bugCount = (int) (bug.Value * GameController.difficulty.BugMultiplier());
+                int bugCount = bug.Value;
+                if (bugInfo != bossBug)
+                {
+                    bugCount = (int) (bugCount * GameController.difficulty.BugMultiplier());
+                }
                 totalBugCount += bugCount;
                 for (int j = 0; j < bugCount; j++)
                 {
