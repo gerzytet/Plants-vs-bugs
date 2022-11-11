@@ -256,6 +256,7 @@ MonoBehaviour:
   damage: 0
   player: {fileID: 0}
   hypnotized: 0
+  deathSound: {fileID: 8300000, guid: a07583cb178c9e1469c888b1a9abc08e, type: 3}
   basicBug: {fileID: 6839797796799151105, guid: 101b60995b064094d9b344aff1780162, type: 3}
 --- !u!58 &8128832909775321933
 CircleCollider2D:
@@ -350,6 +351,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6115395911008054923, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439694831469965846, guid: ede4beb0df2ac2545b8bf55e7e3d2482, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

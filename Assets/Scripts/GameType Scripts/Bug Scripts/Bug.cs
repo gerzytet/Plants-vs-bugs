@@ -5,6 +5,9 @@ public abstract class Bug : GameType
     Rigidbody2D rb;
     public GameObject player;
     public bool hypnotized = false;
+    [Space]
+    public AudioClip deathSound;
+
     public virtual void FixedUpdate()
     {
         GameObject plant = findNearestPlant();
@@ -59,8 +62,9 @@ public abstract class Bug : GameType
 
     public override void Die()
     {
-        base.Die();
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
         MainCharacter.instance.money += ((BugInfo)gameTypeInfo).moneyOnDeath;
+        base.Die();
     }
     
     public void Hypnotize()
