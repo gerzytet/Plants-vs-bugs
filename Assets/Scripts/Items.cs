@@ -13,7 +13,7 @@ public static class Items
             case Item.HOE:
                 return "Hoe";
             case Item.Wood_SEEDS:
-                return "Woodwall Seed";
+                return "Tree Seed";
             case Item.EMPTY:
                 return "Empty";
             case Item.INVALID:
@@ -21,7 +21,7 @@ public static class Items
             case Item.CACTUS_SEEDS:
                 return "Sharpshooter Seed";
             case Item.MUSHROOM_SEEDS:
-                return "Hypnoshroom Seed";
+                return "Hypno-candy";
             case Item.DANDELION_SEEDS:
                 return "Spikedelion Seed";
             default:

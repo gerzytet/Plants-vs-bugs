@@ -9,12 +9,15 @@ public class BugSpawner : MonoBehaviour
     public List<Dictionary<BugInfo, int>> waves;
     public BugInfo basicBug;
     public BugInfo mamaBug;
+    public BugInfo tinyBug;
+    public BugInfo bossBug;
+    public BugInfo stinkBug;
 
     public GameObject clock;
 
     private int randomSpawnHour()
     {
-        return Random.Range(20, 26) % 24;
+        return Random.Range(21, 27) % 24;
     }
 
     public void Awake()
@@ -23,14 +26,29 @@ public class BugSpawner : MonoBehaviour
         {
             new Dictionary<BugInfo, int>(),
             new Dictionary<BugInfo, int> {
-                {basicBug, 5},
-                {mamaBug, 1}
+                {tinyBug, 5},
+                {basicBug, 2}
             },
             new Dictionary<BugInfo, int> {
-                {basicBug, 10}
+                {basicBug, 8}
             },
             new Dictionary<BugInfo, int> {
-                {basicBug, 15}
+                {tinyBug, 30},
+                {stinkBug, 2}
+            },
+            new Dictionary<BugInfo, int> {
+                {basicBug, 10},
+                {mamaBug, 2},
+                {stinkBug, 2}
+            },
+            new Dictionary<BugInfo, int>()
+            {
+                {mamaBug, 10},
+                {stinkBug, 2}
+            },
+            new Dictionary<BugInfo, int>()
+            {
+                {bossBug, 1}
             }
         };
 

@@ -63,7 +63,7 @@ public abstract class Bug : GameType
         MainCharacter.instance.money += ((BugInfo)gameTypeInfo).moneyOnDeath;
     }
     
-    public void Hypnotize()
+    public virtual void Hypnotize()
     {
         hypnotized = true;
         gameObject.layer = LayerMask.NameToLayer("plants");

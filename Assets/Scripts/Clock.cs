@@ -1,5 +1,7 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Clock : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Clock : MonoBehaviour
     public float minutes { private set; get; }
     [SerializeField] public int hours { private set; get; } = 13;
     [SerializeField] public int day {private set; get; } = 1;
+    public GameObject skipButton;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -28,11 +31,17 @@ public class Clock : MonoBehaviour
         }
 
         GetComponent<TextMeshProUGUI>().text = GetDisplayString();
+        skipButton.GetComponent<Button>().interactable = IsDay();
     }
 
     public bool IsDay()
     {
         return hours >= 6 && hours <= 20;
+    }
+
+    public void SkipToNight()
+    {
+        hours = 21;
     }
 
     string GetDisplayString()

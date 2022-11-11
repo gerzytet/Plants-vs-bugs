@@ -12,6 +12,7 @@ public class Hoe : MonoBehaviour
     public float angle;
     public float remainingAngle = 60;
     public List<GameObject> alreadyHit = new List<GameObject>();
+    public int HIT_LIMIT = 4;
 
     // Update is called once per frame
     void Update()
@@ -30,7 +31,7 @@ public class Hoe : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Tags.HasTag(collision.gameObject, "bug") && !alreadyHit.Contains(collision.gameObject))
+        if (Tags.HasTag(collision.gameObject, "bug") && !alreadyHit.Contains(collision.gameObject) && alreadyHit.Count < HIT_LIMIT)
         {
             alreadyHit.Add(collision.gameObject);
             collision.gameObject.GetComponent<GameType>().Damage(20);

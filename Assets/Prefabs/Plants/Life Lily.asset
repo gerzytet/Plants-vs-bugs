@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b51a66e7e326f74f835d1cb1ee67edc, type: 3}
   m_Name: Life Lily
   m_EditorClassIdentifier: 
-  name: LIfe Lily
   maxHealth: 200
   damage: 0
   cost: 0
   reload: 0
   growthRate: 0
   maxGrowth: 0
-  seed: 4
+  seed: 2
   plant: {fileID: 4084283088682538874, guid: 466b61f5c7f6ebd409cab37dca64bd34, type: 3}
   buyable: 1
   inventoryDisplay: {fileID: 8220634645090444284, guid: d14ff03242d4f2b4e89f5748f0ef8b3f, type: 3}
   sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  range: 0
   initialScalePercent: 1
   growthMaxHealth: 0
   growthMaxDamage: 0
