@@ -10,6 +10,7 @@ public abstract class Bug : GameType
 
     public int moneyOnDeath = 0;
 
+
     public virtual void FixedUpdate()
     {
         GameObject plant = findNearestPlant();
