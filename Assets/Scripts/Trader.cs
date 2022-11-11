@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,10 @@ public class Trader : MonoBehaviour
     public GameObject tradeUI;
     public GameObject player;
     public GameObject gameController;
+    public GameObject clock;
+    public Sprite daySprite;
+    public Sprite nightSprite;
+    private bool inRange = false;
     
     public void Awake()
     {
@@ -25,7 +30,7 @@ public class Trader : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            tradeUI.SetActive(true);
+            inRange = true;
         }
     }
 
@@ -33,7 +38,7 @@ public class Trader : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            tradeUI.SetActive(false);
+            inRange = false;
         }
     }
 
@@ -45,5 +50,21 @@ public class Trader : MonoBehaviour
             mc.money -= trade.cost;
             mc.AddItem(new ItemStack(trade.item));
         }
+    }
+
+    public void Update()
+    {
+        bool day = clock.GetComponent<Clock>().IsDay();
+        var renderer = GetComponent<SpriteRenderer>();
+        if (day)
+        {
+            renderer.sprite = daySprite;
+        }
+        else
+        {
+            renderer.sprite = nightSprite;
+        }
+        
+        tradeUI.SetActive(day && inRange);
     }
 }

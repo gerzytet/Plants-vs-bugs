@@ -1,16 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Bug : GameType
 {
     public GameObject player;
+    public bool hypnotized = false;
     public virtual void FixedUpdate()
     {
         GameObject spriteObject = transform.GetChild(1).gameObject;
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
         spriteObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, velocity));
+    }
+
+    public virtual void Start()
+    {
+        base.Start();
+        if (hypnotized)
+        {
+            Hypnotize();
+        }
     }
     
     protected GameObject findNearestPlant()
@@ -18,7 +25,8 @@ public abstract class Bug : GameType
         Vector2 myLocation = transform.position;
         GameObject closestPlant = null;
         float closestDistance = float.MaxValue;
-        foreach (GameObject plant in Tags.GetAll("plant"))
+        string tag = hypnotized ? "bug" : "plant";
+        foreach (GameObject plant in Tags.GetAll(tag))
         {
             float dist = Vector2.Distance(myLocation, plant.transform.position);
             if (dist < closestDistance)
@@ -32,7 +40,8 @@ public abstract class Bug : GameType
     
     public void OnCollisionStay2D(Collision2D collision2D)
     {
-        if (Tags.HasTag(collision2D.gameObject, "plant"))
+        string tag = hypnotized ? "bug" : "plant";
+        if (Tags.HasTag(collision2D.gameObject, tag))
         {
             collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
         }
@@ -42,5 +51,17 @@ public abstract class Bug : GameType
     {
         base.Die();
         MainCharacter.instance.money += ((BugInfo)gameTypeInfo).moneyOnDeath;
+    }
+    
+    public void Hypnotize()
+    {
+        hypnotized = true;
+        gameObject.layer = LayerMask.NameToLayer("plants");
+        var renderer = GetComponentInChildren<SpriteRenderer>();
+        renderer.sortingLayerID = SortingLayer.NameToID("plants");
+        renderer.color = Color.blue;
+        health = gameTypeInfo.maxHealth;
+        Tags.Add(gameObject, "plant");
+        Tags.Remove(gameObject, "bug");
     }
 }

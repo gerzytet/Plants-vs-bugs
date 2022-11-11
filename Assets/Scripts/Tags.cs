@@ -22,7 +22,10 @@ public class Tags
     
     public static void Remove(GameObject gameObject, string tag)
     {
-        tagMap.Remove(tag);
+        if (tagMap.ContainsKey(tag))
+        {
+            tagMap[tag].Remove(gameObject);
+        }
     }
     
     public static void RemoveAll(GameObject gameObject)

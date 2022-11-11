@@ -1,7 +1,7 @@
 
 public enum Item
 {
-    HOE, SEEDS, EMPTY, INVALID, CACTUS_SEEDS
+    HOE, SEEDS, EMPTY, INVALID, CACTUS_SEEDS, MUSHROOM_SEEDS, DANDELION_SEEDS
 }
 
 public static class Items
@@ -20,6 +20,10 @@ public static class Items
                 return "Invalid";
             case Item.CACTUS_SEEDS:
                 return "Cactus Seeds";
+            case Item.MUSHROOM_SEEDS:
+                return "Mushroom Seeds";
+            case Item.DANDELION_SEEDS:
+                return "Spikedelion Seeds";
             default:
                 return "Unknown";
         }
@@ -31,6 +35,8 @@ public static class Items
         {
             case Item.SEEDS:
             case Item.CACTUS_SEEDS:
+            case Item.MUSHROOM_SEEDS:
+            case Item.DANDELION_SEEDS:
                 return true;
             default:
                 return false;
