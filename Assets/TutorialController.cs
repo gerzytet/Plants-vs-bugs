@@ -29,7 +29,6 @@ public class TutorialController : MonoBehaviour
             new ItemStack(Item.EMPTY),
             new ItemStack(Item.EMPTY),
             new ItemStack(Item.EMPTY)
-            //yep
         });
     }
 
@@ -42,7 +41,7 @@ public class TutorialController : MonoBehaviour
         {
             case 1:
                 text.text =
-                    "Your goal is to defend the 4 flowers in the middle, called life lillies, against the swarm of mutant bugs!";
+                    "Your goal is to defend the 4 flowers in the middle, called life lilies, against the swarm of mutant bugs!";
                 break;
             case 2:
                 text.text = "Use the WASD keys or arrow keys to move around.  Move to the magenta circle to continue.";
@@ -74,6 +73,18 @@ public class TutorialController : MonoBehaviour
                 button.interactable = false;
                 clock.GetComponent<Clock>().frozen = false;
                 break;
+            case 8:
+                text.text = "Don't let them eat your life lilies!";
+                break;
+            case 9:
+                text.text = "Good job!  Press next one more time to close this tutorial.";
+                button.interactable = true;
+                break;
+            case 10:
+                gameObject.SetActive(false);
+                tutorialButton.SetActive(false);
+                tutorialText.SetActive(false);
+                break;
         }
     }
 
@@ -99,6 +110,12 @@ public class TutorialController : MonoBehaviour
         } else if (stage == 7)
         {
             if (!clock.GetComponent<Clock>().IsDay())
+            {
+                Advance();
+            }
+        } else if (stage == 8)
+        {
+            if (clock.GetComponent<Clock>().IsDay())
             {
                 Advance();
             }
