@@ -65,6 +65,19 @@ public abstract class Bug : GameType
             }
         }
     }
+    
+    public virtual void OnCollisionStay2D(Collision2D collision2D)
+    {
+        if (hypnotized && Tags.HasTag(collision2D.gameObject, "bug") || !hypnotized && Tags.HasTag(collision2D.gameObject, "plant"))
+        {
+            collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        
+    }
 
     public override void Die()
     {
