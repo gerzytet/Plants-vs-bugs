@@ -13,6 +13,12 @@ public class Clock : MonoBehaviour
     [SerializeField] public int day = 1;
     public GameObject skipButton;
     public bool frozen = false;
+    public static Clock instance { private set; get; }
+    
+    public void Awake()
+    {
+        instance = this;
+    }
 
     // Update is called once per frame
     void FixedUpdate()

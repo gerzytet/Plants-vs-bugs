@@ -52,7 +52,7 @@ public abstract class Plant : GameType
             float growthPercent = growth / ((PlantInfo)gameTypeInfo).maxGrowth;
             maxHealth = initialMaxHealth + growthPercent * healthDif;
             SetDamage(initialDamage + growthPercent * damageDif);
-            plantTransform.localScale = Vector3.one * (scale + scaleDif * growthPercent);
+            transform.localScale = Vector3.one * (scale + scaleDif * growthPercent);
 
         }
     }

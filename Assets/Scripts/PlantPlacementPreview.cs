@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class PlantPlacementPreview : MonoBehaviour
 {
-    public GameObject player;
     private Vector3 initialScale;
     public GameObject badPlacementIndicator;
     private int collisions;
-    public GameObject gameController;
     private static Vector2 getMousePosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -47,14 +45,13 @@ public class PlantPlacementPreview : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MainCharacter mc = player.GetComponent<MainCharacter>();
+        MainCharacter mc = MainCharacter.instance;
         bool holdingSeeds = mc.HeldItem().item.IsSeeds();
         if (holdingSeeds)
         {
             transform.localScale = initialScale;
             badPlacementIndicator.SetActive(!CanPlantHere());
-            GetComponent<SpriteRenderer>().sprite = gameController.GetComponent<GameController>()
-                .plantInfoFromSeeds(mc.HeldItem().item).sprite;
+            GetComponent<SpriteRenderer>().sprite = GameController.instance.plantInfoFromSeeds(mc.HeldItem().item).sprite;
         }
         else
         {

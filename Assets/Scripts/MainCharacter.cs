@@ -16,7 +16,7 @@ public class MainCharacter : MonoBehaviour
     public int money;
     public GameObject gameController;
     public GameObject spriteObject;
-    public static MainCharacter instance;
+    public static MainCharacter instance { get; private set; }
     [Space]
     public AudioSource swingHoe;
 
@@ -121,7 +121,6 @@ public class MainCharacter : MonoBehaviour
         GameObject newHoe = Instantiate(this.hoe, position, Quaternion.identity);
         Hoe hoeComponent = newHoe.GetComponent<Hoe>();
         hoeComponent.angle = Vector2.SignedAngle(Vector2.right, getMousePosition() - position) - hoeComponent.remainingAngle / 2;
-        hoeComponent.player = gameObject;
         itemCooldown = MAX_ITEM_COOLDOWN;
     }
 

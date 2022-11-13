@@ -4,16 +4,6 @@ using UnityEngine;
 public class MamaBug : Bug
 {
     public GameObject basicBug;
-    
-    public override void Start()
-    {
-        base.Start();
-    }
-    public override void FixedUpdate()
-    {
-        base.FixedUpdate();
-    }
-    
     public override void Die()
     {
         base.Die();

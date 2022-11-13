@@ -7,7 +7,6 @@ using UnityEngine;
 public class TradeEntry : MonoBehaviour
 {
     public Trade trade;
-    public GameObject trader;
 
     void Update()
     {
@@ -17,7 +16,6 @@ public class TradeEntry : MonoBehaviour
 
     public void BuyClicked()
     {
-        Trader traderScript = trader.GetComponent<Trader>();
-        traderScript.TryExecuteTrade(trade);
+        Trader.instance.TryExecuteTrade(trade);
     }
 }

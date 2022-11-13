@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class Bug : GameType
 {
     Rigidbody2D rb;
-    public GameObject player;
     public bool hypnotized = false;
     [Space]
     public AudioClip deathSound;

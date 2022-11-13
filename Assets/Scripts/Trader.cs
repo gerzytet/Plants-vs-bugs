@@ -8,7 +8,6 @@ public class Trader : MonoBehaviour
 {
     public List<Trade> trades = new List<Trade>();
 
-    public GameObject tradeUI;
     public GameObject player;
     public GameObject gameController;
     public GameObject clock;
@@ -17,9 +16,11 @@ public class Trader : MonoBehaviour
     private bool inRange = false;
     [Space]
     public AudioSource itemBuy;
+    public static Trader instance { get; private set; }
     
     public void Awake()
     {
+        instance = this;
         foreach (PlantInfo plant in gameController.GetComponent<GameController>().plantList)
         {
             if (plant.buyable)
@@ -68,6 +69,6 @@ public class Trader : MonoBehaviour
             renderer.sprite = nightSprite;
         }
         
-        tradeUI.SetActive(day && inRange);
+        TradeUI.instance.gameObject.SetActive(day && inRange);
     }
 }

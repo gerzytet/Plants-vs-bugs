@@ -15,8 +15,7 @@ public class BugSpawner : MonoBehaviour
     public BugInfo tinyBug;
     public BugInfo bossBug;
     public BugInfo stinkBug;
-
-    public GameObject clock;
+    public static BugSpawner instance { get; private set; }
 
     private int randomSpawnHour()
     {
@@ -25,6 +24,7 @@ public class BugSpawner : MonoBehaviour
 
     public void Awake()
     {
+        instance = this;
         waves = new List<Dictionary<BugInfo, int>>
         {
             new Dictionary<BugInfo, int> {
@@ -93,7 +93,7 @@ public class BugSpawner : MonoBehaviour
     
     void FixedUpdate()
     {
-        var clockComponent = clock.GetComponent<Clock>();
+        var clockComponent = Clock.instance;
         if (spawnSchedule.ContainsKey(clockComponent.day) && spawnSchedule[clockComponent.day].ContainsKey(clockComponent.hours))
         {
             var bugs = spawnSchedule[clockComponent.day][clockComponent.hours];

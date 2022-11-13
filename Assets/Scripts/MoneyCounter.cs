@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class MoneyCounter : MonoBehaviour
 {
-    public GameObject player;
-
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = "Money: " + player.GetComponent<MainCharacter>().money;
+        GetComponent<TextMeshProUGUI>().text = "Money: " + MainCharacter.instance.money;
     }
 }
