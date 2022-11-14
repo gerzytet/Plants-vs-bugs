@@ -14,7 +14,6 @@ public class MainCharacter : MonoBehaviour
     private double itemCooldown = 0;
     public static int INVENTORY_CAPACITY = 6;
     public int money;
-    public GameObject gameController;
     public GameObject spriteObject;
     public static MainCharacter instance { get; private set; }
     [Space]
@@ -46,10 +45,7 @@ public class MainCharacter : MonoBehaviour
     public int currentlySelected = 0;
     private float mouseScroll = 0;
     public GameObject hoe;
-    public GameObject plantPlacementPreview;
-
-    public GameObject tradeUI;
-
+    
     bool anyPressed(List<KeyCode> keys)
     {
         foreach (KeyCode key in keys)
@@ -127,7 +123,7 @@ public class MainCharacter : MonoBehaviour
     private void plantPlant()
     {
         GameObject plantPrefab = null;
-        foreach (PlantInfo plantInfo in gameController.GetComponent<GameController>().plantList)
+        foreach (PlantInfo plantInfo in GameController.instance.plantList)
         {
             if (plantInfo.seed == HeldItem().item)
             {
@@ -171,12 +167,12 @@ public class MainCharacter : MonoBehaviour
             spriteObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, newVelocity));
         }
 
-        if (Input.GetMouseButton(0) && !tradeUI.activeInHierarchy && itemCooldown <= 0)
+        if (Input.GetMouseButton(0) && !TradeUI.instance.gameObject.activeInHierarchy && itemCooldown <= 0)
         {
             if (HeldItem().item == Item.HOE)
             {
                 shootHoe();
-            } else if (HeldItem().item.IsSeeds() && plantPlacementPreview.GetComponent<PlantPlacementPreview>().CanPlantHere())
+            } else if (HeldItem().item.IsSeeds() && PlantPlacementPreview.instance.CanPlantHere())
             {
                 plantPlant();
             }

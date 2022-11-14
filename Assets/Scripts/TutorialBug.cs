@@ -11,6 +11,6 @@ public class TutorialBug : MonoBehaviour
     }
     public void OnDestroy()
     {
-        TutorialController.instance.GetComponent<TutorialController>().Advance();
+        TutorialController.instance.Advance();
     }
 }

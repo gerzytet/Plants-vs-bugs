@@ -7,15 +7,9 @@ public class StartButton : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Scenes/SampleScene");
+        LevelSelect.instance.selected.Load();
     }
     
-    public void StartTutorial()
-    {
-        GameController.difficulty = Difficulty.EASY;
-        SceneManager.LoadScene("Scenes/TutorialScene");
-    }
-
     public void difficultyChanged(int value)
     {
         switch (value)

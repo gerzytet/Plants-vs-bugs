@@ -8,9 +8,17 @@ public class PlantPlacementPreview : MonoBehaviour
     private Vector3 initialScale;
     public GameObject badPlacementIndicator;
     private int collisions;
+
+    public static PlantPlacementPreview instance { get; private set; }
+
     private static Vector2 getMousePosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public void Awake()
+    {
+        instance = this;
     }
     
     public void Start()

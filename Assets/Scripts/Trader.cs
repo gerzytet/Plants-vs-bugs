@@ -8,20 +8,19 @@ public class Trader : MonoBehaviour
 {
     public List<Trade> trades = new List<Trade>();
 
-    public GameObject player;
-    public GameObject gameController;
-    public GameObject clock;
     public Sprite daySprite;
     public Sprite nightSprite;
     private bool inRange = false;
-    [Space]
-    public AudioSource itemBuy;
     public static Trader instance { get; private set; }
     
     public void Awake()
     {
         instance = this;
-        foreach (PlantInfo plant in gameController.GetComponent<GameController>().plantList)
+    }
+
+    public void Start()
+    {
+        foreach (PlantInfo plant in GameController.instance.GetComponent<GameController>().plantList)
         {
             if (plant.buyable)
             {
@@ -31,7 +30,7 @@ public class Trader : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == MainCharacter.instance.gameObject)
         {
             inRange = true;
         }
@@ -39,7 +38,7 @@ public class Trader : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == MainCharacter.instance.gameObject)
         {
             inRange = false;
         }
@@ -47,18 +46,18 @@ public class Trader : MonoBehaviour
 
     public void TryExecuteTrade(Trade trade)
     {
-        MainCharacter mc = player.GetComponent<MainCharacter>();
+        MainCharacter mc = MainCharacter.instance;
         if (mc.CanFit(trade.item) && mc.money >= trade.cost)
         {
             mc.money -= trade.cost;
             mc.AddItem(new ItemStack(trade.item));
-            itemBuy.Play();
+            GetComponent<AudioSource>().Play();
         }
     }
 
     public void Update()
     {
-        bool day = clock.GetComponent<Clock>().IsDay();
+        bool day = Clock.instance.IsDay();
         var renderer = GetComponent<SpriteRenderer>();
         if (day)
         {
