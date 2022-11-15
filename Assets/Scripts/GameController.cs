@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public static Difficulty difficulty = Difficulty.NORMAL;
     public List<PlantInfo> plantList = new List<PlantInfo>();
     public static GameController instance { get; private set; }
+    public GameObject rangeIndicatorPrefab;
     
     void Awake()
     {

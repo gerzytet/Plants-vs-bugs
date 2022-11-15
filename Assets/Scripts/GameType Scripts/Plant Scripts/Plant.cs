@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public abstract class Plant : GameType
     [SerializeField] float scale;
     [SerializeField] float maxHealth;
     [SerializeField] private float growth = 0f;
+    public GameObject rangeIndicator = null;
     
     public override void Start()
     {
@@ -39,6 +41,21 @@ public abstract class Plant : GameType
             nextHealTime = Time.time + healTime;
         }
     }
+
+    public void Update()
+    {
+        bool mouseOver = Physics2D.OverlapPointAll(Camera.main.ScreenToWorldPoint(Input.mousePosition)).Any(collider => GetComponents<Collider2D>().Contains(collider));
+        if (rangeIndicator == null && mouseOver)
+        {
+            rangeIndicator = Instantiate(GameController.instance.rangeIndicatorPrefab, transform.position, Quaternion.identity);
+            rangeIndicator.GetComponent<RangeIndicator>().plant = this;
+        } else if (rangeIndicator != null && !mouseOver)
+        {
+            Destroy(rangeIndicator);
+            rangeIndicator = null;
+        }
+    }
+
     public abstract void Shoot();
     public virtual void Grow()
     {

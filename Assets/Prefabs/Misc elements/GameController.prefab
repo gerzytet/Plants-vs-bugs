@@ -50,3 +50,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b92a0eabfed8a2e44b37e2168eca375c, type: 2}
   - {fileID: 11400000, guid: 291bd8dc7d39a8045b95ff5c4f6d2de9, type: 2}
   - {fileID: 11400000, guid: 93603b13357fa844cb3d19c87a966ba0, type: 2}
+  rangeIndicatorPrefab: {fileID: 8522416109376529931, guid: afc70b067c7ee1c439c2d00bca00e703, type: 3}
