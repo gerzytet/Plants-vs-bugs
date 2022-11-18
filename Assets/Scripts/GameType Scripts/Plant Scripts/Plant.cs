@@ -19,6 +19,7 @@ public abstract class Plant : GameType
     [SerializeField] float maxHealth;
     [SerializeField] private float growth = 0f;
     public GameObject rangeIndicator = null;
+    public AudioSource shootSound;
     
     public override void Start()
     {
@@ -56,7 +57,10 @@ public abstract class Plant : GameType
         }
     }
 
-    public abstract void Shoot();
+    public virtual void Shoot() {
+        shootSound.Play();
+    }
+
     public virtual void Grow()
     {
         if (growth < ((PlantInfo)gameTypeInfo).maxGrowth)
