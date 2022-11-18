@@ -7,6 +7,7 @@ public class RangeIndicator : MonoBehaviour
     public Plant plant;
     void Update()
     {
-        transform.localScale = Vector2.one * ((PlantInfo) plant.gameTypeInfo).range;
+        float range = ((PlantInfo) plant.gameTypeInfo).range;
+        transform.localScale = Vector2.one * (range == float.PositiveInfinity ? 0 : range);
     }
 }
