@@ -7,7 +7,6 @@ public class Hoe : MonoBehaviour
 {
     //excepts player and angle to be set
     static float degreesPerSecond = 300.0f;
-    public GameObject player;
     public Vector2 root;
     public float angle;
     public float remainingAngle = 60;
@@ -17,7 +16,7 @@ public class Hoe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        root = player.transform.position;
+        root = MainCharacter.instance.transform.position;
         angle += degreesPerSecond * Time.deltaTime;
         remainingAngle -= degreesPerSecond * Time.deltaTime;
         if (remainingAngle <= 0)

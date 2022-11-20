@@ -12,10 +12,7 @@ public class InventoryDisplay : MonoBehaviour
     public List<Item> lastKnownInventory;
     public GameObject selectIndicator;
     public GameObject inventoryNumber;
-
-    public GameObject player;
-    public GameObject gameController;
-
+    
     void Start()
     {
         for (int i = 0; i < MainCharacter.INVENTORY_CAPACITY; i++)
@@ -29,7 +26,7 @@ public class InventoryDisplay : MonoBehaviour
     }
     void Update()
     {
-        MainCharacter mc = player.GetComponent<MainCharacter>();
+        MainCharacter mc = MainCharacter.instance;
         List<Item> currentInventory = mc.inventory.Select(itemStack => itemStack.item).ToList();
         for (int i = 0; i < MainCharacter.INVENTORY_CAPACITY; i++)
         {
@@ -38,7 +35,7 @@ public class InventoryDisplay : MonoBehaviour
                 GameObject newDisplay = emptyDisplay;
                 if (currentInventory[i].IsSeeds())
                 {
-                    foreach (PlantInfo plantInfo in gameController.GetComponent<GameController>().plantList)
+                    foreach (PlantInfo plantInfo in GameController.instance.plantList)
                     {
                         if (plantInfo.seed == currentInventory[i])
                         {

@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class Bug : GameType
 {
     Rigidbody2D rb;
-    public GameObject player;
     public bool hypnotized = false;
     [Space]
     public AudioClip deathSound;
@@ -64,6 +63,19 @@ public abstract class Bug : GameType
                 GetComponent<AudioSource>().Play();
             }
         }
+    }
+    
+    public virtual void OnCollisionStay2D(Collision2D collision2D)
+    {
+        if (hypnotized && Tags.HasTag(collision2D.gameObject, "bug") || !hypnotized && Tags.HasTag(collision2D.gameObject, "plant"))
+        {
+            collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        
     }
 
     public override void Die()

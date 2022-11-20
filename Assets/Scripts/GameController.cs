@@ -7,7 +7,13 @@ public class GameController : MonoBehaviour
 {
     public static Difficulty difficulty = Difficulty.NORMAL;
     public List<PlantInfo> plantList = new List<PlantInfo>();
-    // Update is called once per frame
+    public static GameController instance { get; private set; }
+    public GameObject rangeIndicatorPrefab;
+    
+    void Awake()
+    {
+        instance = this;
+    }
     void FixedUpdate()
     {
         if (Tags.GetAll("life_plant").Count == 0)

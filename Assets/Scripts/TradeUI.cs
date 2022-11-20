@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class TradeUI : MonoBehaviour
 {
-    public GameObject trader;
     public List<GameObject> tradeEntryList = new List<GameObject>();
+    public static TradeUI instance { get; private set; }
     void Awake()
     {
-        List<Trade> trades = trader.GetComponent<Trader>().trades;
+        instance = this;
+        gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        List<Trade> trades = Trader.instance.trades;
         for (int i = 0; i < trades.Count; i++)
         {
             var tradeEntry = tradeEntryList[i].GetComponent<TradeEntry>();
             tradeEntry.trade = trades[i];
-            tradeEntry.trader = trader;
         }
 
         for (int i = trades.Count; i < tradeEntryList.Count; i++)
         {
             tradeEntryList[i].SetActive(false);
         }
-        gameObject.SetActive(false);
     }
 }
