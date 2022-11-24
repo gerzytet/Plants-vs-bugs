@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fda7624e8f4b898014c4a71cc3e25b, type: 3}
   m_Name: Farm
   m_EditorClassIdentifier: 
-  scene: {fileID: 102900000, guid: cdcd8a97fa283a4469e7f0fb35023f3e, type: 3}
+  scene: Farm
   displayName: Farm

@@ -10,6 +10,8 @@ public class Sun : MonoBehaviour
 
     public AudioSource dayMusic;
     public AudioSource nightMusic;
+    public AudioSource tutorialMusic;
+    public AudioSource bossMusic;
 
     // Update is called once per frame
     void Update()
@@ -23,11 +25,31 @@ public class Sun : MonoBehaviour
         component1.intensity = intensity;
         component1.color = color;
 
-        if (component.IsDay() && !dayMusic.isPlaying) {
-            dayMusic.Play();
-            nightMusic.Stop();
-        } else if (!component.IsDay() && !nightMusic.isPlaying) {
+
+        if (TutorialController.instance != null && TutorialController.instance.gameObject.activeInHierarchy)
+        {
+            if (!tutorialMusic.isPlaying)
+            {
+                tutorialMusic.Play();
+            }
+        } else if (Tags.GetAll("boss").Count > 0)
+        {
             dayMusic.Stop();
+            nightMusic.Stop();
+            tutorialMusic.Stop();
+            if (!bossMusic.isPlaying)
+            {
+                bossMusic.Play();
+            }
+        }
+        else if (component.IsDay() && !dayMusic.isPlaying) {
+            dayMusic.Play();
+            tutorialMusic.Stop();
+            nightMusic.Stop();
+        }
+        else if (!component.IsDay() && !nightMusic.isPlaying) {
+            dayMusic.Stop();
+            tutorialMusic.Stop();
             nightMusic.Play();
         }
     }

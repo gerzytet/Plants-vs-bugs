@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlantInfo : GameTypeInfo
 {
-    //inital stats for plants
+    //initial stats for plants
     public int cost;
     public float reload;
     public float growthRate;

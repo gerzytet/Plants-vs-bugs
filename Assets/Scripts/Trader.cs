@@ -20,6 +20,8 @@ public class Trader : MonoBehaviour
 
     public void Start()
     {
+        print("Trader Start");
+        trades = new List<Trade>();
         foreach (PlantInfo plant in GameController.instance.GetComponent<GameController>().plantList)
         {
             if (plant.buyable)

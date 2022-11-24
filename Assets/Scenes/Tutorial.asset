@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fda7624e8f4b898014c4a71cc3e25b, type: 3}
   m_Name: Tutorial
   m_EditorClassIdentifier: 
-  scene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  scene: Tutorial
   displayName: Tutorial

@@ -8,6 +8,7 @@ public class BasicPlant : Plant
 
     public override void Shoot()
     {
+        base.Shoot();
         nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation, transform);
         projectile.transform.rotation = Quaternion.Euler(0, 0,

@@ -52,7 +52,8 @@ public class BugSpawner : MonoBehaviour
                 {bossBug, 1}
             }
         };
-
+        
+        spawnSchedule = new Dictionary<int, Dictionary<int, List<BugInfo>>>();
         for (int i = 0; i < waves.Count; i++)
         {
             int day = i + 1;

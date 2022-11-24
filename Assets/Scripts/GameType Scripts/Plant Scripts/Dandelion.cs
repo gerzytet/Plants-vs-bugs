@@ -15,6 +15,7 @@ public class Dandelion : Plant
 
     public override void Shoot()
     {
+        base.Shoot();
         nextShot = Time.time + ((PlantInfo)gameTypeInfo).reload;
         for (int angle = 0; angle < 360; angle += 23)
         {

@@ -26,14 +26,20 @@ public class PlantPlacementPreview : MonoBehaviour
         initialScale = transform.localScale;
     }
 
-    public void OnTriggerEnter2D()
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        collisions++;
+        if (!collider.isTrigger)
+        {
+            collisions++;
+        }
     }
     
-    public void OnTriggerExit2D()
+    public void OnTriggerExit2D(Collider2D collider)
     {
-        collisions--;
+        if (!collider.isTrigger)
+        {
+            collisions--;
+        }
     }
 
     private static Vector2 getMousePositionGridlined()

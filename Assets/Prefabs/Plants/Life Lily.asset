@@ -23,7 +23,7 @@ MonoBehaviour:
   buyable: 1
   inventoryDisplay: {fileID: 8220634645090444284, guid: d14ff03242d4f2b4e89f5748f0ef8b3f, type: 3}
   sprite: {fileID: 21300000, guid: 9be271accb000a14083610394f500316, type: 3}
-  range: 0
+  range: 1
   initialScalePercent: 1
   growthMaxHealth: 0
   growthMaxDamage: 0

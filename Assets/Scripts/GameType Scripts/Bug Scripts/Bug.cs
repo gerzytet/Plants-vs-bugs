@@ -5,7 +5,8 @@ public abstract class Bug : GameType
     Rigidbody2D rb;
     public bool hypnotized = false;
     [Space]
-    public AudioClip deathSound;
+    public GameObject deathSoundPrefab;
+    public AudioSource eatSound;
     public int moneyOnDeath = 0;
 
 
@@ -70,9 +71,9 @@ public abstract class Bug : GameType
         if (hypnotized && Tags.HasTag(collision2D.gameObject, "bug") || !hypnotized && Tags.HasTag(collision2D.gameObject, "plant"))
         {
             collision2D.gameObject.GetComponent<GameType>().Damage(gameTypeInfo.damage);
-            if (!GetComponent<AudioSource>().isPlaying)
+            if (eatSound.isPlaying)
             {
-                GetComponent<AudioSource>().Play();
+                eatSound.Play();
             }
         }
         
@@ -80,7 +81,7 @@ public abstract class Bug : GameType
 
     public override void Die()
     {
-        AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        Destroy(Instantiate(deathSoundPrefab, transform.position, Quaternion.identity), 3);
         MainCharacter.instance.money += moneyOnDeath;
         base.Die();
     }

@@ -168,7 +168,7 @@ MonoBehaviour:
   maxHealth: 0
   growth: 0
   rangeIndicator: {fileID: 0}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: -318741738878517210}
   projectilePrefab: {fileID: 8593513568719648668, guid: e09b34b5e9aa96044bb9d51c7790a68f, type: 3}
 --- !u!82 &-318741738878517210
 AudioSource:
@@ -182,7 +182,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 83b56d5176305394ab87de932a61f7d2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

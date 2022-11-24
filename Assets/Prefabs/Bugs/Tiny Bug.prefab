@@ -255,9 +255,9 @@ MonoBehaviour:
   gameTypePrefab: {fileID: 6839797796799151105}
   health: 100
   damage: 0
-  player: {fileID: 0}
   hypnotized: 0
-  deathSound: {fileID: 8300000, guid: a07583cb178c9e1469c888b1a9abc08e, type: 3}
+  deathSoundPrefab: {fileID: 4467444657682129521, guid: fcd25330c0923214cbc8412d513c5918, type: 3}
+  eatSound: {fileID: 6317349102105453871}
   moneyOnDeath: 0
 --- !u!58 &2031043380863383015
 CircleCollider2D:
