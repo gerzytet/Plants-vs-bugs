@@ -14,7 +14,9 @@ public class Sunflower : Plant
         projectile.transform.rotation = Quaternion.Euler(0, 0,
             Random.Range(-10, 10) + Vector2.SignedAngle(Vector2.right,
                 FindNearestBugInRange().transform.position - transform.position));
-        projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
+        Projectile component = projectile.GetComponent<Projectile>();
+        component.damage = GetDamage();
+        projectile.GetComponent<Rigidbody2D>().mass = knockback;
         Destroy(projectile, 5);
     }
 

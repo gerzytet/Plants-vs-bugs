@@ -8,6 +8,7 @@ public class StartButton : MonoBehaviour
     public void StartGame()
     {
         LevelSelect.instance.selected.Load();
+        MainMenuJukebox.instance.Die();
     }
     
     public void difficultyChanged(int value)

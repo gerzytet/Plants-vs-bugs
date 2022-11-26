@@ -20,6 +20,7 @@ public abstract class Plant : GameType
     [SerializeField] private float growth = 0f;
     public GameObject rangeIndicator = null;
     public AudioSource shootSound;
+    public float knockback;
     
     public override void Start()
     {
@@ -27,11 +28,13 @@ public abstract class Plant : GameType
         maxHealth = gameTypeInfo.maxHealth;
         initialMaxHealth = gameTypeInfo.maxHealth;
         initialDamage = gameTypeInfo.damage;
-        scale = ((PlantInfo)gameTypeInfo).initialScalePercent;
-        healthDif = ((PlantInfo)gameTypeInfo).growthMaxHealth - initialMaxHealth;
-        damageDif = ((PlantInfo)gameTypeInfo).growthMaxDamage - initialDamage;
-        scaleDif = 1 - ((PlantInfo)gameTypeInfo).initialScalePercent;
-        range = ((PlantInfo)gameTypeInfo).range;
+        var plantInfo = ((PlantInfo)gameTypeInfo);
+        scale = plantInfo.initialScalePercent;
+        healthDif = plantInfo.growthMaxHealth - initialMaxHealth;
+        damageDif = plantInfo.growthMaxDamage - initialDamage;
+        scaleDif = 1 - plantInfo.initialScalePercent;
+        range = plantInfo.range;
+        knockback = plantInfo.knockback;
     }
     public virtual void FixedUpdate()
     {
@@ -74,7 +77,6 @@ public abstract class Plant : GameType
             maxHealth = initialMaxHealth + growthPercent * healthDif;
             SetDamage(initialDamage + growthPercent * damageDif);
             transform.localScale = Vector3.one * (scale + scaleDif * growthPercent);
-
         }
     }
     public virtual GameObject FindNearestBugInRange()
@@ -93,6 +95,4 @@ public abstract class Plant : GameType
         }
         return closestBug;
     }
-
-
 }

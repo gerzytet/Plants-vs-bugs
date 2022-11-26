@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Dandelion : Plant
@@ -9,7 +10,9 @@ public class Dandelion : Plant
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation, transform);
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
-        projectile.GetComponent<Projectile>().SetProjectileDamage(GetDamage());
+        Projectile component = projectile.GetComponent<Projectile>();
+        component.damage = damage;
+        projectile.GetComponent<Rigidbody2D>().mass = knockback;
         Destroy(projectile, 5);
     }
 

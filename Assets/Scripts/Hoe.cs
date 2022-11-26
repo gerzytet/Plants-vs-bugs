@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Hoe : MonoBehaviour
 {
     //excepts player and angle to be set
     static float degreesPerSecond = 300.0f;
+    private static float knockback = 2f;
     public Vector2 root;
     public float angle;
     public float remainingAngle = 60;
@@ -34,6 +36,7 @@ public class Hoe : MonoBehaviour
         {
             alreadyHit.Add(collision.gameObject);
             collision.gameObject.GetComponent<GameType>().Damage(20);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(((Vector2)collision.gameObject.transform.position - root).normalized * knockback, ForceMode2D.Impulse);
         }
     }
 }

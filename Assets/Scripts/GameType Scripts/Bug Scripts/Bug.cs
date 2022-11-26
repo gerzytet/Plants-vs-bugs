@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Bug : GameType
 {
@@ -8,7 +10,7 @@ public abstract class Bug : GameType
     public GameObject deathSoundPrefab;
     public AudioSource eatSound;
     public int moneyOnDeath = 0;
-
+    public static float FRICTION = 0.98f;
 
     public virtual void FixedUpdate()
     {
@@ -21,8 +23,9 @@ public abstract class Bug : GameType
         {
             Vector2 direction = plant.transform.position - transform.position;
 
-            rb.velocity = direction.normalized * ((BugInfo)gameTypeInfo).speed;
-            transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, rb.velocity));
+            rb.AddForce(direction.normalized * ((BugInfo)gameTypeInfo).speed);
+            rb.velocity *= FRICTION;
+            transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, direction));
         }
     }
 
@@ -94,9 +97,8 @@ public abstract class Bug : GameType
     {
         hypnotized = true;
         gameObject.layer = LayerMask.NameToLayer("plants");
-        var renderer = GetComponentInChildren<SpriteRenderer>();
-        renderer.sortingLayerID = SortingLayer.NameToID("plants");
-        renderer.color = Color.blue;
+        var image = transform.Find("Health Bar/Canvas/Health Bar Fill");
+        image.gameObject.GetComponent<Image>().color = Color.blue;
         health = gameTypeInfo.maxHealth;
         Tags.Add(gameObject, "plant");
         Tags.Remove(gameObject, "bug");

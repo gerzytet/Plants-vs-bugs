@@ -10,7 +10,17 @@ public class BugGuideBug : MonoBehaviour
     void Start()
     {
         info = (BugInfo) GetComponent<Bug>().gameTypeInfo;
+        SetLights(false);
     }
+
+    private void SetLights(bool active)
+    {
+        foreach (Light light in GetComponentsInChildren<Light>(true))
+        {
+            light.gameObject.SetActive(active);
+        }
+    }
+    
     void Update()
     {
         Vector2 pointerLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -20,10 +30,12 @@ public class BugGuideBug : MonoBehaviour
             if (overlapping)
             {
                 GuideText.instance.SetText(info.displayName + ":\n" + info.guideDescription);
+                SetLights(true);
             }
             else
             {
                 GuideText.instance.ResetText();
+                SetLights(false);
             }
         }
         

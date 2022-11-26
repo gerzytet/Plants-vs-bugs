@@ -10,6 +10,6 @@ public class Level : ScriptableObject
     
     public void Load()
     {
-        SceneManager.LoadScene("Scenes/" + scene);
+        SceneManager.LoadSceneAsync("Scenes/" + scene);
     }
 }

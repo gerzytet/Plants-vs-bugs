@@ -23,4 +23,5 @@ public class PlantInfo : GameTypeInfo
     public float growthMaxDamage;
     public string displayName = "";
     public string guideDescription = "";
+    public float knockback = 0.2f;
 }
