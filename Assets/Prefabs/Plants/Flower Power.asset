@@ -29,3 +29,4 @@ MonoBehaviour:
   growthMaxDamage: 15
   displayName: Sunflower
   guideDescription: Sunflower seed machine gun.
+  knockback: 0.1

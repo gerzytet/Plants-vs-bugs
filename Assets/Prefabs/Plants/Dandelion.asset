@@ -30,3 +30,4 @@ MonoBehaviour:
   displayName: Spikedelion
   guideDescription: Shoots spikes in all directions.  Especially effective at close
     range!
+  knockback: 0.15
