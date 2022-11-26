@@ -20,6 +20,7 @@ public abstract class Bug : GameType
         else
         {
             Vector2 direction = plant.transform.position - transform.position;
+            
             rb.velocity = direction.normalized * ((BugInfo)gameTypeInfo).speed;
         }
         transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, rb.velocity));

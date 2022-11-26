@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Farm.unity
     guid: cdcd8a97fa283a4469e7f0fb35023f3e
+  - enabled: 1
+    path: Assets/Scenes/PlantsAndBugs.unity
+    guid: 800e0011fd1f2d34cabcad3cb918023f
+  - enabled: 1
+    path: Assets/Scenes/Plant Guide.unity
+    guid: 371c0dcdf8b93274fa77fb00908dc598
   m_configObjects: {}
