@@ -24,8 +24,7 @@ public class Sun : MonoBehaviour
         var component1 = GetComponent<Light>();
         component1.intensity = intensity;
         component1.color = color;
-
-
+        
         if (TutorialController.instance != null && TutorialController.instance.gameObject.activeInHierarchy)
         {
             if (!tutorialMusic.isPlaying)

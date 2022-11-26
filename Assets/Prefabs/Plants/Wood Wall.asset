@@ -27,3 +27,6 @@ MonoBehaviour:
   initialScalePercent: 0.5
   growthMaxHealth: 350
   growthMaxDamage: 0
+  displayName: Tree
+  guideDescription: Acts as a tough, woody decoy to keep bugs away from your more
+    valuable plants.

@@ -27,3 +27,5 @@ MonoBehaviour:
   initialScalePercent: 0.5
   growthMaxHealth: 150
   growthMaxDamage: 15
+  displayName: Sunflower
+  guideDescription: Sunflower seed machine gun.

@@ -17,3 +17,5 @@ MonoBehaviour:
   speed: 8
   bug: {fileID: 6839797796799151105, guid: 4cd6de6056817534e91dc02fd7729201, type: 3}
   moneyOnDeath: 0
+  guideDescription: Much faster than the basic bug, but also more fragile.
+  displayName: Tiny Bug

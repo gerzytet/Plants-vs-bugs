@@ -27,3 +27,5 @@ MonoBehaviour:
   initialScalePercent: 0.5
   growthMaxHealth: 200
   growthMaxDamage: 20
+  displayName: Sharpshooter
+  guideDescription: Basic, cheap, cactus-thorn shooting plant.

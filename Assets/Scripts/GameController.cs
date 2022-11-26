@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public List<PlantInfo> plantList = new List<PlantInfo>();
     public static GameController instance { get; private set; }
     public GameObject rangeIndicatorPrefab;
+    public bool doLoseCheck = true;
     
     void Awake()
     {
@@ -16,7 +17,7 @@ public class GameController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Tags.GetAll("life_plant").Count == 0)
+        if (doLoseCheck && Tags.GetAll("life_plant").Count == 0)
         {
             SceneManager.LoadScene("Scenes/Lose Screen");
         }

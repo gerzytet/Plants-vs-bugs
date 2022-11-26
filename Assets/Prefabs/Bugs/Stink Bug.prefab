@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -121995305
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 1, b: 0.4138174, a: 0.1764706}
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTags:
   - bug
-  gameTypeInfo: {fileID: 11400000, guid: d2eb25d5c5959f24cb8348349414f9e9, type: 2}
+  gameTypeInfo: {fileID: 11400000, guid: df4a20ed859a4844ea4af041b1e2aa77, type: 2}
   gameTypePrefab: {fileID: 6839797796799151105}
   health: 100
   damage: 0

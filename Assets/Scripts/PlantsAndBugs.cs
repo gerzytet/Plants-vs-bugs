@@ -9,7 +9,7 @@ public class PlantsAndBugs : MonoBehaviour
 
     public void PressPlants()
     {
-        SceneManager.LoadScene("Plant Guide");
+        SceneManager.LoadSceneAsync("Plant Guide");
     }
     
     public void PressBugs()

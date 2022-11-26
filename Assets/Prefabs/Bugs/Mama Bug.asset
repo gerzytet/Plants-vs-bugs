@@ -17,3 +17,5 @@ MonoBehaviour:
   speed: 1
   bug: {fileID: 6839797796799151105, guid: 0be454fbb43265a4b87c3817101d6e40, type: 3}
   moneyOnDeath: 0
+  guideDescription: High health.  Splits into 2 basic bugs when killed.
+  displayName: Mama Bug

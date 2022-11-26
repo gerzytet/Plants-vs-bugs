@@ -27,3 +27,6 @@ MonoBehaviour:
   initialScalePercent: 1
   growthMaxHealth: 100
   growthMaxDamage: 0
+  displayName: Hypno-Candy
+  guideDescription: Any bug that eats this becomes hypnotized and fights against
+    other bugs.

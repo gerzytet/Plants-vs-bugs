@@ -21,4 +21,6 @@ public class PlantInfo : GameTypeInfo
     public float initialScalePercent;
     public float growthMaxHealth;
     public float growthMaxDamage;
+    public string displayName = "";
+    public string guideDescription = "";
 }

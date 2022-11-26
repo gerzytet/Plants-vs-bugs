@@ -17,3 +17,5 @@ MonoBehaviour:
   speed: 3
   bug: {fileID: 6839797796799151105, guid: 101b60995b064094d9b344aff1780162, type: 3}
   moneyOnDeath: 0
+  guideDescription: The basic, life lily-eating garden pest!
+  displayName: Basic Bug

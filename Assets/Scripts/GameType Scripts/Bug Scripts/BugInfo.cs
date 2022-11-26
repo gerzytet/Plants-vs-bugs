@@ -9,4 +9,6 @@ public class BugInfo : GameTypeInfo
     public float speed;
     public GameObject bug;
     public int moneyOnDeath;
+    public string guideDescription = "";
+    public string displayName = "";
 }

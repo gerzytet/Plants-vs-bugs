@@ -39,7 +39,22 @@ public class Tags
     public static List<GameObject> GetAll(string tag)
     {
         List<GameObject> list;
-        return tagMap.TryGetValue(tag, out list) ? list : new List<GameObject>();
+        tagMap.TryGetValue(tag, out list);
+        if (list == null)
+        {
+            list = new List<GameObject>();
+        }
+
+        List<GameObject> filteredList = new List<GameObject>();
+        foreach (GameObject obj in list)
+        {
+            if (!obj.IsDestroyed())
+            {
+                filteredList.Add(obj);
+            }
+        }
+
+        return filteredList;
     }
 
     public static bool HasTag(GameObject gameObject, string tag)

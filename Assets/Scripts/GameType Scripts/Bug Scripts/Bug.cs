@@ -20,10 +20,10 @@ public abstract class Bug : GameType
         else
         {
             Vector2 direction = plant.transform.position - transform.position;
-            
+
             rb.velocity = direction.normalized * ((BugInfo)gameTypeInfo).speed;
+            transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, rb.velocity));
         }
-        transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, rb.velocity));
     }
 
     public override void Start()
@@ -83,7 +83,10 @@ public abstract class Bug : GameType
     public override void Die()
     {
         Destroy(Instantiate(deathSoundPrefab, transform.position, Quaternion.identity), 3);
-        MainCharacter.instance.money += moneyOnDeath;
+        if (MainCharacter.instance != null)
+        {
+            MainCharacter.instance.money += moneyOnDeath;
+        }
         base.Die();
     }
     
