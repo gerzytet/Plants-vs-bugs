@@ -15,7 +15,12 @@ public class Hoe : MonoBehaviour
     public List<GameObject> alreadyHit = new List<GameObject>();
     public int HIT_LIMIT = 4;
 
-    // Update is called once per frame
+    public void Start()
+    {
+        //prevent the hoe from being in the wrong place on the first frame
+        Update();
+    }
+
     void Update()
     {
         root = MainCharacter.instance.transform.position;

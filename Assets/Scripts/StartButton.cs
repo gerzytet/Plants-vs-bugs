@@ -7,23 +7,11 @@ public class StartButton : MonoBehaviour
 {
     public void StartGame()
     {
+        if (LevelSelect.instance.selected.isTutorial)
+        {
+            GameController.difficulty = Difficulty.EASY;
+        }
         LevelSelect.instance.selected.Load();
         MainMenuJukebox.instance.Die();
-    }
-    
-    public void difficultyChanged(int value)
-    {
-        switch (value)
-        {
-            case 0:
-                GameController.difficulty = Difficulty.EASY;
-                break;
-            case 1:
-                GameController.difficulty = Difficulty.NORMAL;
-                break;
-            case 2:
-                GameController.difficulty = Difficulty.HARD;
-                break;
-        }
     }
 }

@@ -23,7 +23,7 @@ public abstract class Bug : GameType
         {
             Vector2 direction = plant.transform.position - transform.position;
 
-            rb.AddForce(direction.normalized * ((BugInfo)gameTypeInfo).speed);
+            rb.AddForce(direction.normalized * (((BugInfo)gameTypeInfo).speed * rb.mass));
             rb.velocity *= FRICTION;
             transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, direction));
         }

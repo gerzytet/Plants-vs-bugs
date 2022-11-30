@@ -1987,6 +1987,7 @@ GameObject:
   - component: {fileID: 822812583}
   - component: {fileID: 822812582}
   - component: {fileID: 822812581}
+  - component: {fileID: 822812584}
   m_Layer: 5
   m_Name: Difficulty Select
   m_TagString: Untagged
@@ -2076,10 +2077,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1792185771}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+      - m_Target: {fileID: 822812584}
+        m_TargetAssemblyTypeName: DifficultySelect, Assembly-CSharp
         m_MethodName: difficultyChanged
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2127,6 +2128,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822812579}
   m_CullTransparentMesh: 1
+--- !u!114 &822812584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822812579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94497e3432ae3a94ebf44f94a8128511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829504645
 GameObject:
   m_ObjectHideFlags: 0

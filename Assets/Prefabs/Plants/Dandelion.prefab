@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6220727768394159a864c09097ae81df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTags: []
+  initialTags:
+  - plant
   gameTypeInfo: {fileID: 11400000, guid: 291bd8dc7d39a8045b95ff5c4f6d2de9, type: 2}
   gameTypePrefab: {fileID: 6364606239882563397}
   health: 0
@@ -152,6 +153,7 @@ MonoBehaviour:
   growth: 0
   rangeIndicator: {fileID: 0}
   shootSound: {fileID: 53803906428396020}
+  knockback: 0
   projectilePrefab: {fileID: 8593513568719648668, guid: abdaebcb91c876f42817d3221504f92c, type: 3}
 --- !u!58 &5272240884254254639
 CircleCollider2D:

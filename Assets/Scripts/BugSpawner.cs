@@ -8,7 +8,8 @@ public class BugSpawner : MonoBehaviour
     private Dictionary<int, Dictionary<int, List<BugInfo>>> spawnSchedule = new Dictionary<int, Dictionary<int, List<BugInfo>>>();
     public List<Dictionary<BugInfo, int>> waves;
     public List<int> waveMoney;
-    private List<int> waveBugCounts = new List<int>();
+    private List<int> waveBugCounts = new();
+    private float roundedOutMoney = 0;
     
     public BugInfo basicBug;
     public BugInfo mamaBug;
@@ -27,27 +28,27 @@ public class BugSpawner : MonoBehaviour
         instance = this;
         waves = new List<Dictionary<BugInfo, int>>
         {
-            new Dictionary<BugInfo, int> {
+            new() {
                 {tinyBug, 5},
                 {basicBug, 2}
             },
-            new Dictionary<BugInfo, int> {
+            new() {
                 {basicBug, 8}
             },
-            new Dictionary<BugInfo, int> {
+            new() {
                 {tinyBug, 30},
                 {stinkBug, 2}
             },
-            new Dictionary<BugInfo, int> {
+            new() {
                 {basicBug, 10},
                 {mamaBug, 2},
                 {stinkBug, 4}
             },
-            new Dictionary<BugInfo, int>()
+            new ()
             {
                 {mamaBug, 11}
             },
-            new Dictionary<BugInfo, int>()
+            new()
             {
                 {bossBug, 1}
             }
@@ -103,7 +104,14 @@ public class BugSpawner : MonoBehaviour
                 List<GameObject> spawnPoints = Tags.GetAll("bug_spawn");
                 var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
                 float moneyPerBug = waveMoney[clockComponent.day - 1] / (float) waveBugCounts[clockComponent.day - 1];
-                SpawnBugAt(spawnPoint.transform.position, bug.bug, (int) moneyPerBug);
+                roundedOutMoney += moneyPerBug - (int) moneyPerBug;
+                int money = (int) moneyPerBug;
+                if (roundedOutMoney >= 0.999)
+                {
+                    money += 1;
+                    roundedOutMoney -= 1;
+                }
+                SpawnBugAt(spawnPoint.transform.position, bug.bug, money);
             }
             spawnSchedule[clockComponent.day].Remove(clockComponent.hours);
         }

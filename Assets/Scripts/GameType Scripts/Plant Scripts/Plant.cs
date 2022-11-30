@@ -48,6 +48,10 @@ public abstract class Plant : GameType
 
     public void Update()
     {
+        if (range == 0 || float.IsInfinity(range))
+        {
+            return;
+        }
         bool mouseOver = Physics2D.OverlapPointAll(Camera.main.ScreenToWorldPoint(Input.mousePosition)).Any(collider => GetComponents<Collider2D>().Contains(collider));
         if (rangeIndicator == null && mouseOver)
         {
@@ -66,14 +70,15 @@ public abstract class Plant : GameType
 
     public virtual void Grow()
     {
-        if (growth < ((PlantInfo)gameTypeInfo).maxGrowth)
+        var plantInfo = (PlantInfo)gameTypeInfo;
+        if (growth < plantInfo.maxGrowth)
         {
-            growth += ((PlantInfo)gameTypeInfo).growthRate;
+            growth += plantInfo.growthRate;
 
-            if (growth > ((PlantInfo)gameTypeInfo).maxGrowth)
-                growth = ((PlantInfo)gameTypeInfo).maxGrowth;
+            if (growth > plantInfo.maxGrowth)
+                growth = plantInfo.maxGrowth;
 
-            float growthPercent = growth / ((PlantInfo)gameTypeInfo).maxGrowth;
+            float growthPercent = growth / plantInfo.maxGrowth;
             maxHealth = initialMaxHealth + growthPercent * healthDif;
             SetDamage(initialDamage + growthPercent * damageDif);
             transform.localScale = Vector3.one * (scale + scaleDif * growthPercent);
