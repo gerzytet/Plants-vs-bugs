@@ -28,6 +28,5 @@ MonoBehaviour:
   growthMaxHealth: 200
   growthMaxDamage: 20
   displayName: Spikedelion
-  guideDescription: Shoots spikes in all directions.  Especially effective at close
-    range!
+  guideDescription: Shoots spikes in all directions.
   knockback: 0.15
