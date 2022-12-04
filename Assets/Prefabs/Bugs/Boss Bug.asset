@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026cc5bf0a150a246ad735cc9421b5e1, type: 3}
   m_Name: Boss Bug
   m_EditorClassIdentifier: 
-  maxHealth: 1500
+  maxHealth: 2500
   damage: 1
   speed: 2
   bug: {fileID: 6839797796799151105, guid: b45282773a044374db2ab6cf774d8465, type: 3}

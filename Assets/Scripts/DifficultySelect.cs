@@ -6,15 +6,23 @@ using UnityEngine.UI;
 
 public class DifficultySelect : MonoBehaviour
 {
+    
+    public static DifficultySelect instance;
     void Start()
     {
         GetComponent<TMP_Dropdown>().value = 1;
         GameController.difficulty = Difficulty.NORMAL;
     }
 
-    public void difficultyChanged(int value)
+    void Awake()
     {
-        switch (value)
+        instance = this;
+    }
+
+    public void difficultyChanged()
+    {
+        Debug.Log(GetComponent<TMP_Dropdown>().value);
+        switch (GetComponent<TMP_Dropdown>().value)
         {
             case 0:
                 GameController.difficulty = Difficulty.EASY;

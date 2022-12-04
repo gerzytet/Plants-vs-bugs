@@ -25,8 +25,9 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 4875eb2fb2c23c44791855175c961ba3, type: 3}
   range: 0
   initialScalePercent: 0.5
-  growthMaxHealth: 350
+  growthMaxHealth: 220
   growthMaxDamage: 0
   displayName: Tree
   guideDescription: Acts as a tough, woody decoy to keep bugs away from your more
     valuable plants.
+  knockback: 0.2

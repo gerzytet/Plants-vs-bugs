@@ -27,5 +27,7 @@ public class LevelSelect : MonoBehaviour
     public void OnValueChanged(int index)
     {
         selected = levels[index];
+        DifficultySelect.instance.gameObject.SetActive(!selected.isTutorial);
+        
     }
 }

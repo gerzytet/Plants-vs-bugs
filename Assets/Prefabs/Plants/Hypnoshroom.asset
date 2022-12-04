@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   damage: 0
-  cost: 35
+  cost: 25
   reload: 0
   growthRate: 0.25
   maxGrowth: 1000
@@ -30,3 +30,4 @@ MonoBehaviour:
   displayName: Hypno-Candy
   guideDescription: Any bug that eats this becomes hypnotized and fights against
     other bugs.
+  knockback: 0.2

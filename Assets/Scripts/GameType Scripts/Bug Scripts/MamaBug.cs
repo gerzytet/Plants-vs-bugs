@@ -9,7 +9,7 @@ public class MamaBug : Bug
         base.Die();
         for (int i = 0; i < 2; i++)
         {
-            Vector2 location = ((Vector2)transform.position) + new Vector2(Random.Range(0, 0.2f), Random.Range(0, 0.2f));
+            Vector2 location = ((Vector2)transform.position) + new Vector2(Random.Range(0, 1f), Random.Range(0, 1f));
             GameObject newBug = Instantiate(basicBug, location, Quaternion.identity);
             if (hypnotized)
             {

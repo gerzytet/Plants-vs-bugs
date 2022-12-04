@@ -1253,8 +1253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 11400000, guid: 4f3cd65757c3c1d449801c5bfded3ea5, type: 2}
   - {fileID: 11400000, guid: 6f8ea665df0fdbd4280f81e61e777b9e, type: 2}
+  - {fileID: 11400000, guid: 4f3cd65757c3c1d449801c5bfded3ea5, type: 2}
   selected: {fileID: 0}
 --- !u!1 &423536290
 GameObject:
@@ -2080,7 +2080,7 @@ MonoBehaviour:
       - m_Target: {fileID: 822812584}
         m_TargetAssemblyTypeName: DifficultySelect, Assembly-CSharp
         m_MethodName: difficultyChanged
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

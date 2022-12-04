@@ -26,7 +26,7 @@ MonoBehaviour:
   range: Infinity
   initialScalePercent: 0.25
   growthMaxHealth: 200
-  growthMaxDamage: 20
+  growthMaxDamage: 13
   displayName: Spikedelion
   guideDescription: Shoots spikes in all directions.
   knockback: 0.15

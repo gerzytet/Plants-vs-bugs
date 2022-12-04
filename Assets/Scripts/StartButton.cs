@@ -13,5 +13,6 @@ public class StartButton : MonoBehaviour
         }
         LevelSelect.instance.selected.Load();
         MainMenuJukebox.instance.Die();
+        Debug.Log(GameController.difficulty);
     }
 }
